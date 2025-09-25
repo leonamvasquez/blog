@@ -48,7 +48,9 @@ jobs:
         with:
           node-version: '18'
       - name: Install Node dependencies
-        run: npm ci
+        # Use `npm install` because package-lock.json is not present in the repo;
+        # `npm ci` fails without a lockfile. Disable audit/fund for CI speed.
+        run: npm install --no-audit --no-fund
       - name: Build CSS assets
         run: npm run build:css
       - name: Build with Jekyll
