@@ -105,10 +105,9 @@ Kubernetes é um sistema de orquestração que gerencia containers em clusters, 
 |---------|--------|------------|
 | **Escopo** | Single host | Cluster multi-host |
 | **Orquestração** | Limitada (Docker Compose) | Completa |
-| **Networking** | Bridge/Host | CNI plugins avançados |
+| **Networking** | Bridge/Host | CNI plugins |
 | **Storage** | Volumes locais | Persistent Volumes |
 | **Load Balancing** | Básico | Avançado (Services, Ingress) |
-| **Secrets** | Básico | Gerenciamento robusto |
 
 ### Exemplo: Deploy no Kubernetes
 
@@ -153,52 +152,8 @@ kubectl get pods
 kubectl get services
 ```
 
-## Comparação Resumida
-
-### Quando Usar Cada Um?
-
-#### **Containers Linux Nativos**
-- 🎯 **Quando**: Controle total sobre o ambiente
-- 👍 **Vantagens**: Máxima eficiência, sem overhead
-- 👎 **Desvantagens**: Complexidade alta, portabilidade limitada
-
-#### **Docker**
-- 🎯 **Quando**: Desenvolvimento local, CI/CD, deploys simples
-- 👍 **Vantagens**: Fácil de usar, portável, grande ecosistema
-- 👎 **Desvantagens**: Limitado para orquestração complexa
-
-#### **Kubernetes**
-- 🎯 **Quando**: Aplicações em produção, microserviços, alta disponibilidade
-- 👍 **Vantagens**: Orquestração completa, escalabilidade, resilência
-- 👎 **Desvantagens**: Curva de aprendizado íngreme, complexidade operacional
-
-## Evolução Natural
-
-A evolução típica em projetos reais:
-
-```
-1. Desenvolvimento Local
-   └── Docker (simplicidade)
-
-2. Staging/Testing  
-   └── Docker Compose (múltiplos serviços)
-
-3. Produção Pequena
-   └── Docker Swarm (orquestração simples)
-
-4. Produção Enterprise
-   └── Kubernetes (orquestração completa)
-```
-
 ## Conclusão
 
-Containers revolucionaram o desenvolvimento e deploy de aplicações. Começando com tecnologias nativas do Linux, evoluindo para a simplicidade do Docker, até a orquestração poderosa do Kubernetes, cada ferramenta tem seu lugar no ecosistema moderno de desenvolvimento.
+Containers revolucionaram o desenvolvimento e deploy de aplicações. Começando com tecnologias nativas do Linux, evoluindo para a simplicidade do Docker, até a orquestração do Kubernetes, cada ferramenta tem seu lugar no ecosistema de desenvolvimento.
 
 A escolha entre elas depende das necessidades específicas do projeto: complexidade, escala, recursos disponíveis e expertise da equipe.
-
----
-
-**Próximos Posts**: Fique ligado para tutoriais práticos sobre Docker e Kubernetes! 🚀
-
-> **Dica**: Comece sempre pelo Docker para entender os conceitos fundamentais antes de partir para o Kubernetes.
-{: .prompt-tip }
