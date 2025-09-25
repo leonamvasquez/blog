@@ -50,6 +50,19 @@
 
   {{ seo_tags }}
 
+  <!-- Custom SEO Meta Tags for Leonam Vasquez -->
+  <meta name="keywords" content="Leonam Vasquez, Leonam, DevOps Engineer, Platform Engineering, SRE, AWS, Azure, GCP, Kubernetes, Docker, Terraform, Infrastructure as Code, Cloud Computing">
+  <meta name="author" content="Leonam Ricardo Vasquez Ramos">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Additional Open Graph for better social sharing -->
+  <meta property="og:locale" content="pt_BR">
+  <meta property="article:author" content="Leonam Vasquez">
+  
+  <!-- Schema.org structured data -->
+  {% include seo-schema.html %}
+
   <title>
     {%- unless page.layout == 'home' -%}
       {{ page.title | append: ' | ' }}

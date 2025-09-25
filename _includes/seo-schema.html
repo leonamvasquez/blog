@@ -1,0 +1,57 @@
+<!-- Schema.org structured data for Person and Website -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://leonam.co/#person",
+      "name": "Leonam Ricardo Vasquez Ramos",
+      "alternateName": "Leonam Vasquez",
+      "description": "DevOps Engineer especialista em Platform Engineering, SRE, Cloud Computing e Kubernetes",
+      "jobTitle": "DevOps/Platform Engineer",
+      "knowsAbout": ["DevOps", "Platform Engineering", "SRE", "AWS", "Azure", "GCP", "Kubernetes", "Docker", "Terraform", "Infrastructure as Code"],
+      "url": "https://leonam.co",
+      "sameAs": [
+        "https://github.com/leonamvasquez",
+        "https://linkedin.com/in/leonamvasquez"
+      ],
+      "email": "leonamvasquezr@gmail.com",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "DevOps/Platform Engineering"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://leonam.co/#website",
+      "url": "https://leonam.co",
+      "name": "Leonam Vasquez - DevOps & Platform Engineer",
+      "description": "Blog técnico sobre DevOps, Platform Engineering, SRE e Cloud Computing por Leonam Vasquez",
+      "publisher": {
+        "@id": "https://leonam.co/#person"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://leonam.co/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://leonam.co/#blog",
+      "url": "https://leonam.co",
+      "name": "Blog Leonam Vasquez",
+      "description": "Artigos técnicos sobre DevOps, Platform Engineering, SRE, Cloud Computing e tecnologias relacionadas",
+      "author": {
+        "@id": "https://leonam.co/#person"
+      },
+      "publisher": {
+        "@id": "https://leonam.co/#person"
+      },
+      "inLanguage": "pt-BR"
+    }
+  ]
+}
+</script>

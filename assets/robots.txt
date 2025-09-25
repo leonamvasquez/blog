@@ -1,10 +1,25 @@
 ---
 permalink: /robots.txt
-# The robots rules
+# The robots rules for Leonam Vasquez blog
 ---
 
 User-agent: *
+Allow: /
 
+# Disallow admin and draft content
 Disallow: /norobots/
+Disallow: /_drafts/
+Disallow: /admin/
 
+# Allow important pages for Leonam Vasquez personal branding
+Allow: /about/
+Allow: /posts/
+Allow: /categories/
+Allow: /tags/
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemaps
 Sitemap: {{ '/sitemap.xml' | absolute_url }}
+Sitemap: {{ '/feed.xml' | absolute_url }}
