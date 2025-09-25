@@ -1,0 +1,100 @@
+{
+  "prompt": {
+    "main_description": "Create a professional social media preview image for a tech blog about DevOps, Platform Engineering, SRE, and Cloud Computing",
+    "dimensions": {
+      "width": 1200,
+      "height": 630,
+      "format": "landscape",
+      "aspect_ratio": "1.91:1"
+    },
+    "content_elements": {
+      "title": {
+        "text": "Leonam Vasquez",
+        "style": "modern, bold, sans-serif font",
+        "color": "white or light color",
+        "size": "large, prominent"
+      },
+      "subtitle": {
+        "text": "DevOps/Platform Engineer",
+        "style": "clean, readable font",
+        "color": "light gray or accent color",
+        "size": "medium, below main title"
+      },
+      "tagline": {
+        "text": "DevOps • SRE • Cloud Computing • Platform Engineering",
+        "style": "minimal, separated by dots or pipes",
+        "color": "muted but readable",
+        "size": "smaller, descriptive"
+      }
+    },
+    "visual_style": {
+      "theme": "modern tech/developer aesthetic",
+      "color_scheme": {
+        "primary": "deep blue (#2563eb) or dark navy",
+        "secondary": "electric blue or cyan accent",
+        "background": "gradient from dark to darker, or subtle tech pattern",
+        "text": "white and light grays"
+      },
+      "layout": "left-aligned text with right-side visual element or full-width gradient"
+    },
+    "background_elements": {
+      "style": "one of the following options",
+      "options": [
+        "Subtle geometric patterns or hexagons",
+        "Abstract network/connection lines",
+        "Minimalist cloud or server icons",
+        "Gradient overlay with subtle texture",
+        "Code-like pattern or terminal aesthetic",
+        "Modern gradient with floating geometric shapes"
+      ]
+    },
+    "technical_specifications": {
+      "resolution": "high resolution, web-optimized",
+      "file_format": "PNG or JPG",
+      "compression": "optimized for web sharing",
+      "social_platforms": "optimized for LinkedIn, Twitter, Facebook, GitHub"
+    },
+    "design_inspiration": {
+      "reference_style": "similar to GitHub social cards, developer portfolio headers, or tech company blog previews",
+      "mood": "professional, trustworthy, modern, tech-savvy",
+      "avoid": "cluttered design, too many colors, small text, busy backgrounds"
+    },
+    "branding_elements": {
+      "include": [
+        "Subtle tech iconography (cloud, gear, code brackets)",
+        "Clean typography hierarchy",
+        "Professional color palette",
+        "Balanced white space"
+      ],
+      "optional": [
+        "Small LinkedIn or GitHub icon",
+        "Subtle .co domain reference",
+        "Minimal tech-related graphics"
+      ]
+    }
+  },
+  "alternative_prompts": [
+    {
+      "version": "minimal",
+      "description": "Clean gradient background with centered text, minimal tech iconography"
+    },
+    {
+      "version": "technical", 
+      "description": "Dark theme with subtle code patterns, terminal-inspired aesthetic"
+    },
+    {
+      "version": "corporate",
+      "description": "Professional blue theme with clean lines and corporate feel"
+    }
+  ],
+  "usage_instructions": {
+    "ai_tools": [
+      "DALL-E 3",
+      "Midjourney", 
+      "Stable Diffusion",
+      "Adobe Firefly"
+    ],
+    "prompt_usage": "Copy the main_description and visual_style sections, customize colors and text as needed",
+    "iterations": "Generate 2-3 variations and choose the most professional one"
+  }
+}

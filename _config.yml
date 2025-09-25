@@ -104,8 +104,8 @@ avatar: "/assets/img/image.jpg"
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
 # Default social preview image used for Open Graph/Twitter Card when not overridden by page.image
-# Put a file like /assets/img/preview.jpg in the project and set the path below.
-social_preview_image: "/assets/img/preview.jpg"
+# Custom social preview image for the blog
+social_preview_image: "/assets/img/preview.png"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
