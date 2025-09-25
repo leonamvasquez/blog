@@ -15,5 +15,12 @@ class SidebarUtil {
 }
 
 export function initSidebar() {
+  // Defensive guards: elements may not exist in some pages/builds.
+  if (!$trigger || !$mask || !$sidebar) {
+    // Nothing to init — avoid throwing exceptions when DOM isn't present yet.
+    console.warn('Sidebar elements not found, skipping initialization');
+    return;
+  }
+
   $trigger.onclick = $mask.onclick = () => SidebarUtil.toggle();
 }
