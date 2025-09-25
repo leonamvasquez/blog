@@ -51,8 +51,8 @@ jobs:
         # Use `npm install` because package-lock.json is not present in the repo;
         # `npm ci` fails without a lockfile. Disable audit/fund for CI speed.
         run: npm install --no-audit --no-fund
-      - name: Build CSS assets
-        run: npm run build:css
+      - name: Build assets (CSS + JavaScript)
+        run: npm run build
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
