@@ -18,7 +18,7 @@ title: Leonam Vasquez # the main title
 
 tagline: DevOps Engineer # it will display as the subtitle
 
-description: Leonam Vasquez - DevOps Engineer, SRE, Cloud Computing (AWS, Azure, GCP), Kubernetes e Infrastructure as Code. Blog técnico sobre tecnologia.
+description: Leonam Vasquez - DevOps, SRE, Plataform Engineering, Cloud Computing, Kubernetes e Infrastructure as Code. Blog técnico sobre tecnologia.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -99,7 +99,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "/assets/img/image.jpg"
+# avatar: "/assets/img/image.jpg"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
