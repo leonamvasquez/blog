@@ -21,7 +21,7 @@ O `count` permite criar múltiplas instâncias de um recurso a partir de um úni
 
 Considere a necessidade de provisionar três sub-redes em uma VPC. Em vez de duplicar o bloco `aws_subnet` três vezes, podemos empregar `count`:
 
-```hcl
+```terraform
 variable "subnet_count" {
   description = "Número de sub-redes a criar"
   type        = number
@@ -59,7 +59,7 @@ O `for_each` itera sobre os itens do mapa ou conjunto fornecido, criando uma ins
 
 Vamos voltar ao exemplo anterior das sub-redes, agora com `for_each` para gerenciar sub-redes com identidades lógicas específicas:
 
-```hcl
+```terraform
 variable "subnets" {
   description = "Um mapa de configurações de sub-redes a serem criadas"
   type = map(object({
@@ -108,7 +108,7 @@ As configurações do Terraform frequentemente exigem lógica para adaptar o pro
 
 Este é o caso de uso mais comum, permitindo que atributos de recursos sejam definidos de forma condicional:
 
-```hcl
+```terraform
 variable "environment" {
   type    = string
   default = "dev"
@@ -130,7 +130,7 @@ Aqui, o `instance_type` da VM será `t3.large` se `var.environment` for "prod", 
 
 Para criar ou omitir um recurso baseado em uma condição, o `count` é frequentemente combinado com uma expressão condicional:
 
-```hcl
+```terraform
 variable "enable_s3_logging" {
   type    = bool
   default = false
@@ -150,7 +150,7 @@ Se `var.enable_s3_logging` for `true`, o bucket S3 será provisionado. Se `false
 
 Para `for_each`, a criação condicional de um recurso único pode ser feita passando um mapa vazio:
 
-```hcl
+```terraform
 resource "aws_s3_bucket" "another_logs_bucket" {
   for_each = var.enable_s3_logging ? { "prod_specific_bucket" = true } : {}
 
