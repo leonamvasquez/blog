@@ -93,6 +93,7 @@ resource "aws_subnet" "example" {
     Name = "subnet-${each.key}"
   }
 }
+
 ```
 
 Com `for_each`, os recursos são endereçados como elementos de um mapa, por exemplo: `aws_subnet.example["public_a_zone1"]`. Se a sub-rede "public_b_zone2" for removida do mapa de variáveis, o Terraform destruirá apenas essa instância específica, sem afetar as demais, devido à identidade estável fornecida pela chave (`each.key`).
