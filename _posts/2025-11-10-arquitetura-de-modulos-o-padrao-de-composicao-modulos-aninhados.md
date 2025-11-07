@@ -1,8 +1,7 @@
 ---
 title: "Arquitetura de Módulos: O Padrão de Composição (Módulos Aninhados)"
-date: 2025-11-10 00:00:00 +0000
-author: Leonam Ricardo Vasquez Ramos
-layout: post
+date: 2025-11-06 20:00:00 +0000
+categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terraform Modules, Refactoring, Best Practices]
 ---
 
