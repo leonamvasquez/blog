@@ -8,5 +8,5 @@ order: 4
 
 Olá! Sou Leonam Vasquez, DevOps Engineer e entusiasta de Linux. Atuando com ecossistemas Cloud, Infraestrutura como Código (Terraform) e Orquestração de Contêineres (Kubernetes), tenho a missão de popularizar tecnologias Cloud Native. Acredito que a melhor forma de fazer isso e de evoluir profissionalmente é compartilhando conhecimento, e foi exatamente por isso que este blog nasceu: para ser um espaço onde documento e divido minhas experiências, desafios e soluções.
 
-Seja muito bem-vindo(a) e espero que o conteúdo agregue valor à você!"
+Seja muito bem-vindo(a) e espero que o conteúdo agregue valor à você!
 
