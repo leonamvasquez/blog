@@ -2,8 +2,7 @@
 title: "Entendendo Containers: Linux, Docker e Kubernetes"
 date: 2025-09-24 18:00:00 -0300
 categories: [DevOps, Containers]
-tags: [containers, linux, docker, kubernetes, devops, cloud-native, tecnologia]
-pin: false
+tags: [Containers, Linux, Docker, Kubernetes, DevOps, Cloud-Native]
 ---
 
 # O Que São Containers?

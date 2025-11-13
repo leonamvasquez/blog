@@ -2,7 +2,7 @@
 title: "Terraform State: O que é, por que é importante e como gerenciá-lo?"
 date: 2025-10-17 11:00:00 +0000
 categories: [DevOps, IaC, Terraform]
-tags: [Terraform, State, IaC, Ops]
+tags: [DevOps, IaC, Terraform, Cloud]
 ---
 
 ## Introdução

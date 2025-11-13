@@ -2,7 +2,7 @@
 title: "Terraform Além do Básico: Utilizando count, for_each e Expressões Condicionais"
 date: 2025-10-23 08:00:00 +0000
 categories: [DevOps, IaC, Terraform]
-tags: [Terraform, Count, ForEach, Condicionais, IaC, Best Practices]
+tags: [DevOps, IaC, Terraform, Cloud, Best Practices]
 ---
 
 ## Introdução
