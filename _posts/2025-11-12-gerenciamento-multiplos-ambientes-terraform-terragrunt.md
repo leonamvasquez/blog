@@ -23,7 +23,7 @@ Muitos iniciantes recorrem ao `terraform workspace`. Embora pareça ser a soluç
 
 ### Abordagem 2: O Padrão de Diretórios
 
-A abordagem nativa correta, alinhada com os artigos anteriores sobre refatoração e composição, é usar uma estrutura de diretórios, onde cada ambiente é um módulo raiz separado.
+A abordagem nativa correta é usar uma estrutura de diretórios, onde cada ambiente é um módulo raiz separado.
 
 ```
 .
@@ -50,7 +50,7 @@ Se você precisar atualizar a versão do provider ou a configuração do bucket 
 
 ## 2. O que é Terragrunt?
 
-Terragrunt é um wrapper para o Terraform. Ele não substitui o Terraform; ele o orquestra. O Terragrunt foi criado especificamente para resolver os problemas de repetição de código e gerenciamento de estado em múltiplos ambientes.
+Terragrunt é um wrapper para o Terraform. Ele não substitui o Terraform, ele o orquestra. O Terragrunt foi criado especificamente para resolver os problemas de repetição de código e gerenciamento de estado em múltiplos ambientes.
 
 Seu principal objetivo é manter suas configurações de Terraform **DRY (Don't Repeat Yourself)**.
 
@@ -150,7 +150,7 @@ Quando você executar `terragrunt apply` neste diretório, o Terragrunt irá:
 1. Ler o `terragrunt.hcl` raiz e configurar o backend S3.
 2. Gerar o key do S3 como `environments/prod/app/terraform.tfstate`, garantindo isolamento.
 3. Baixar o módulo de `terraform { source ... }`.
-4. Executar o `terraform apply` passando as `inputs` (variáveis) de produção.
+4. Executar o `terraform apply` passando os `inputs` (variáveis) de produção.
 
 Se você precisar alterar o bucket S3 do backend, você o faz em um único lugar: o `terragrunt.hcl` raiz.
 
