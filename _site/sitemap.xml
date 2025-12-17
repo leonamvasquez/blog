@@ -1,53 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://localhost:4000/posts/entendendo-containers-linux-docker-kubernetes/</loc>
-<lastmod>2025-09-24T18:00:00-03:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/categories/</loc>
-<lastmod>2025-09-24T20:46:59-03:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/tags/</loc>
-<lastmod>2025-09-24T20:46:59-03:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/archives/</loc>
-<lastmod>2025-09-24T20:46:59-03:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/about/</loc>
-<lastmod>2025-09-24T20:46:59-03:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/containers/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/linux/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/docker/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/kubernetes/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/devops/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/cloud-native/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/tecnologia/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/categories/devops/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/categories/containers/</loc>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://leonam.cloud/</loc>
+    <lastmod>2025-12-16T22:41:06-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- About page - High priority for personal branding -->
+  <url>
+    <loc>https://leonam.cloud/about/</loc>
+    <lastmod>2025-12-16T22:41:06-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Posts -->
+  
+  <url>
+    <loc>https://leonam.cloud/posts/arquitetura-de-configuracao-centralizando-a-verdade-em-sistemas-distribuidos-com-consul/</loc>
+    <lastmod>2025-11-28T09:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leonam.cloud/posts/desvendando-o-hashicorp-consul-o-pilar-de-conectividade-al%C3%A9m-do-terraform-e-vault/</loc>
+    <lastmod>2025-11-25T23:41:51-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leonam.cloud/posts/gerenciamento-multiplos-ambientes-terraform-terragrunt/</loc>
+    <lastmod>2025-11-12T15:43:52-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leonam.cloud/posts/arquitetura-de-modulos-o-padrao-de-composicao-modulos-aninhados/</loc>
+    <lastmod>2025-11-06T17:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leonam.cloud/posts/refatorando-codigo-terraform-abstrair-monolitos-para-modulos-locais/</loc>
+    <lastmod>2025-10-31T05:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leonam.cloud/posts/terraform-alem-do-basico-count-foreach-condicionais/</loc>
+    <lastmod>2025-10-23T05:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leonam.cloud/posts/terraform-state-o-que-e-por-que-e-importante-e-como-gerencia-lo/</loc>
+    <lastmod>2025-10-17T08:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leonam.cloud/posts/desvendando-terraform-infraestrutura-como-codigo/</loc>
+    <lastmod>2025-10-10T08:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leonam.cloud/posts/entendendo-containers-linux-docker-kubernetes/</loc>
+    <lastmod>2025-09-24T18:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <!-- Categories -->
+  <url>
+    <loc>https://leonam.cloud/categories/</loc>
+    <lastmod>2025-12-16T22:41:06-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Tags -->
+  <url>
+    <loc>https://leonam.cloud/tags/</loc>
+    <lastmod>2025-12-16T22:41:06-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Archives -->
+  <url>
+    <loc>https://leonam.cloud/archives/</loc>
+    <lastmod>2025-12-16T22:41:06-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
