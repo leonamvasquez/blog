@@ -52,7 +52,7 @@ O grande diferencial arquitetural de usar uma ferramenta como o Consul, em vez d
 Em uma arquitetura tradicional, o fluxo é estático:
 `Build -> Deploy -> Leitura da Configuração -> Execução`
 
-Com o Consul, o fluxo tornam-se reativo:
+Com o Consul, o fluxo torna-se reativo:
 `Execução -> Watch (Observar) -> Detecção de Mudança -> Reconfiguração em Tempo Real`
 
 O Consul permite que as aplicações (ou ferramentas auxiliares como o `consul-template`) "assistam" (watch) a uma chave ou diretório específico. Se um operador alterar o valor de uma chave no Consul, a aplicação é notificada quase instantaneamente.
@@ -77,13 +77,3 @@ Isso habilita cenários avançados de engenharia, como:
 Mover a configuração de arquivos estáticos para um sistema centralizado como o Consul KV representa uma evolução na maturidade da arquitetura de microsserviços.
 
 Essa abordagem desacopla o ciclo de vida do código (Build/Deploy) do ciclo de vida da configuração (Runtime). O resultado é um sistema mais ágil e resiliente, onde o comportamento da aplicação pode ser ajustado na velocidade que o negócio exige, eliminando a fricção e o risco associados a deploys constantes apenas para mudanças de parâmetros.
----
-title: "Arquitetura de Configuração: Centralizando a 'Verdade' em Sistemas Distribuídos com Consul"
-date: 2025-11-28 09:00:00 -0300
-categories: [DevOps, Consul]
-tags: [DevOps, Consul, Configuration Management, Distributed Systems]
-image:
-	path: /assets/img/foto.jpeg
-	alt: "Foto do autor — Leonam Vasquez"
-	width: 1200
-	height: 630
