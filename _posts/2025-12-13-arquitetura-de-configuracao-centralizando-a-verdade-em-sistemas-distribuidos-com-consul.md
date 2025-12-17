@@ -7,7 +7,7 @@ tags: [DevOps, Consul, Configuration Management, Distributed Systems]
 
 ## Introdução
 
-![Foto do autor — Leonam Vasquez](/assets/img/posts/consul/foto.jpeg)
+![Arquitetura Consul KV](/assets/img/posts/consul/consul-kv-image.png)
 
 Gerenciar a configuração de uma aplicação monolítica costumava ser uma tarefa trivial: um único arquivo `config.properties` ou `.env` hospedado no servidor resolvia a questão. No entanto, a transição para arquiteturas de microsserviços e sistemas distribuídos acabou introduzindo uma complexidade exponencial. Com centenas de containers efêmeros espalhados por clusters dinâmicos, a configuração descentralizada acabou se tornando um gargalo operacional.
 
