@@ -3,6 +3,11 @@ title: "Arquitetura de Configuração: Centralizando a 'Verdade' em Sistemas Dis
 date: 2025-11-28 09:00:00 -0300
 categories: [DevOps, Consul]
 tags: [DevOps, Consul, Configuration Management, Distributed Systems]
+image:
+	path: /assets/img/foto.jpeg
+	alt: "Foto do autor — Leonam Vasquez"
+	width: 1200
+	height: 630
 ---
 
 ## Introdução
