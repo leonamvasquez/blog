@@ -3,14 +3,11 @@ title: "Arquitetura de Configuração: Centralizando a 'Verdade' em Sistemas Dis
 date: 2025-11-28 09:00:00 -0300
 categories: [DevOps, Consul]
 tags: [DevOps, Consul, Configuration Management, Distributed Systems]
-image:
-  path: /assets/img/posts/consul/foto.jpeg
-  alt: "Foto do autor — Leonam Vasquez"
-  width: 1200
-  height: 630
 ---
 
 ## Introdução
+
+![Foto do autor — Leonam Vasquez](/assets/img/posts/consul/foto.jpeg)
 
 Gerenciar a configuração de uma aplicação monolítica costumava ser uma tarefa trivial: um único arquivo `config.properties` ou `.env` hospedado no servidor resolvia a questão. No entanto, a transição para arquiteturas de microsserviços e sistemas distribuídos acabou introduzindo uma complexidade exponencial. Com centenas de containers efêmeros espalhados por clusters dinâmicos, a configuração descentralizada acabou se tornando um gargalo operacional.
 
