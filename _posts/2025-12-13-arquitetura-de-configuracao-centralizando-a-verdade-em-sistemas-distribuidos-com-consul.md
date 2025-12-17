@@ -10,8 +10,6 @@ image:
   height: 630
 ---
 
-<p><img src="/assets/img/posts/consul/foto.jpeg" alt="Foto do autor — Leonam Vasquez" class="img-fluid rounded" /></p>
-
 ## Introdução
 
 Gerenciar a configuração de uma aplicação monolítica costumava ser uma tarefa trivial: um único arquivo `config.properties` ou `.env` hospedado no servidor resolvia a questão. No entanto, a transição para arquiteturas de microsserviços e sistemas distribuídos acabou introduzindo uma complexidade exponencial. Com centenas de containers efêmeros espalhados por clusters dinâmicos, a configuração descentralizada acabou se tornando um gargalo operacional.
