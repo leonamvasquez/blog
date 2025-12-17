@@ -1,0 +1,28 @@
+.bundle/
+vendor/bundle/
+vendor/cache/
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+error.log
+
+# Misc
+.cache/
+coverage/
+dist/
+public/
