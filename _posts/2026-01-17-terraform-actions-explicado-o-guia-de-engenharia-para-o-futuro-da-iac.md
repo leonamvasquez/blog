@@ -1,6 +1,6 @@
 ---
 title: "Terraform Actions Explicado: O Guia de Engenharia para o Futuro da IaC"
-date: 2026-01-17 09:00:00 -0300
+date: 2026-01-17 00:32:27 -0300
 categories: [Terraform, Architecture, Engineering]
 tags: [Terraform, IaC, HashiCorp]
 ---
