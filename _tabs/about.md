@@ -4,9 +4,25 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-# Sobre Mim
+# Sobre o Autor
 
-Olá! Sou Leonam Vasquez, DevOps Engineer e entusiasta de Linux. Atuo com ecossistemas Cloud, Infraestrutura como Código (Terraform) e Orquestração de Contêineres (Kubernetes), tenho a missão de popularizar tecnologias Cloud Native. Acredito que a melhor forma de fazer isso e de evoluir profissionalmente é compartilhando conhecimento, e foi exatamente por isso que este blog nasceu: para ser um espaço onde documento e divido minhas experiências, desafios e soluções.
+Opa, tudo bem?
 
-Seja muito bem-vindo(a) e espero que o conteúdo agregue valor à você!
+Meu nome é Leonam Vasquez. Sou DevOps Engineer com foco em Platform Engineering e automação de infraestrutura.
+
+Atuo construindo plataformas escaláveis e resilientes, sempre buscando integrar o ecossistema Cloud Native para facilitar a vida de quem desenvolve software. Minha área técnica gira em torno de Kubernetes, Terraform, HashiCorp Consul, Hashicorp Vault, ArgoCD, Istio e Github Actions..
+
+Acredito que conhecimento guardado é conhecimento perdido. Minha missão é popularizar tecnologias Cloud Native e desmistificar ferramentas complexas através de conteúdo prático e acessível.
+
+Criei este blog para documentar minhas experiências, compartilhar soluções para problemas reais do dia a dia e contribuir para a comunidade de tecnologia.
+
+---
+
+Espero de coração que você possa tirar alguma informação útil daqui!
+
+Sinta-se à vontade para me conectar nas redes sociais ou mandar um "alô".
+
+- <i class="fab fa-linkedin"></i> [LinkedIn](https://www.linkedin.com/in/leonamvasquez)
+- <i class="fab fa-github"></i> [GitHub](https://github.com/leonamvasquez)
+- <i class="fas fa-envelope"></i> [Email](mailto:leonamvasquezr@gmail.com)
 
