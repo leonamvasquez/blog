@@ -3,14 +3,11 @@
 icon: fas fa-info-circle
 order: 4
 ---
-
-# Sobre o Autor
-
 Opa, tudo bem?
 
 Meu nome é Leonam Vasquez. Sou DevOps Engineer com foco em Platform Engineering e automação de infraestrutura.
 
-Atuo construindo plataformas escaláveis e resilientes, sempre buscando integrar o ecossistema Cloud Native para facilitar a vida de quem desenvolve software. Minha área técnica gira em torno de Kubernetes, Terraform, HashiCorp Consul, Hashicorp Vault, ArgoCD, Istio e Github Actions..
+Atuo construindo plataformas escaláveis e resilientes, sempre buscando integrar o ecossistema Cloud Native para facilitar a vida de quem desenvolve software. Minha área técnica gira em torno de Kubernetes, Terraform, HashiCorp Consul, Hashicorp Vault, ArgoCD, Istio e Github Actions.
 
 Acredito que conhecimento guardado é conhecimento perdido. Minha missão é popularizar tecnologias Cloud Native e desmistificar ferramentas complexas através de conteúdo prático e acessível.
 
