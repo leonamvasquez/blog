@@ -1,8 +1,9 @@
 ---
 title: "Terraform State: O que é, por que é importante e como gerenciá-lo?"
+description: "Guia completo sobre Terraform State em português. Aprenda o que é o arquivo de estado, por que é crítico para IaC, e as melhores práticas para gerenciá-lo com remote backend, locking e armazenamento seguro."
 date: 2025-10-17 11:00:00 +0000
 categories: [DevOps, IaC, Terraform]
-tags: [DevOps, IaC, Terraform, Cloud]
+tags: [DevOps, IaC, Terraform, Terraform State, Remote Backend, S3, State Locking, Tutorial Terraform, HashiCorp]
 ---
 
 ## Introdução

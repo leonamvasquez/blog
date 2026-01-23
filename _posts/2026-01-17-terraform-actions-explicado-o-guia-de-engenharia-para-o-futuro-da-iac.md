@@ -1,8 +1,9 @@
 ---
 title: "Terraform Actions Explicado: O Guia de Engenharia para o Futuro da IaC"
+description: "Aprenda sobre Terraform Actions, a nova feature do Terraform 1.14 que substitui null_resource e local-exec. Guia completo sobre operações Day-2 nativas com exemplos práticos de Ansible e automação."
 date: 2026-01-17 00:32:27 -0300
 categories: [Terraform, Architecture, Engineering]
-tags: [Terraform, IaC, HashiCorp]
+tags: [Terraform, IaC, HashiCorp, Terraform Actions, Day-2 Operations, Ansible, Automação, Tutorial Terraform]
 ---
 
 ## Introdução

@@ -8,19 +8,15 @@
       "@id": "https://leonam.cloud/#person",
       "name": "Leonam Ricardo Vasquez Ramos",
       "alternateName": "Leonam Vasquez",
-      "description": "DevOps Engineer especialista em Platform Engineering, SRE, Cloud Computing e Kubernetes",
+      "description": "DevOps Engineer especialista em Terraform, HashiCorp Consul, Platform Engineering, SRE, Cloud Computing e Kubernetes",
       "jobTitle": "DevOps/Platform Engineer",
-      "knowsAbout": ["DevOps", "Platform Engineering", "SRE", "AWS", "Azure", "GCP", "Kubernetes", "Docker", "Terraform", "Infrastructure as Code"],
+      "knowsAbout": ["Terraform", "HashiCorp Consul", "Consul Template", "Terraform State", "Terraform Modules", "Terragrunt", "Service Discovery", "DevOps", "Platform Engineering", "SRE", "AWS", "Azure", "GCP", "Kubernetes", "Docker", "Infrastructure as Code"],
       "url": "https://leonam.cloud",
       "sameAs": [
         "https://github.com/leonamvasquez",
         "https://linkedin.com/in/leonamvasquez"
       ],
-      "email": "leonamvasquezr@gmail.com",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "DevOps/Platform Engineering"
-      }
+      "email": "leonamvasquezr@gmail.com"
     },
     {
       "@type": "WebSite",
@@ -42,16 +38,87 @@
       "@type": "Blog",
       "@id": "https://leonam.cloud/#blog",
       "url": "https://leonam.cloud",
-      "name": "Blog Leonam Vasquez",
-      "description": "Artigos técnicos sobre DevOps, Platform Engineering, SRE, Cloud Computing e tecnologias relacionadas",
+      "name": "Blog Leonam Vasquez - Terraform e Consul",
+      "description": "Artigos técnicos sobre Terraform, HashiCorp Consul, DevOps, Platform Engineering, SRE, Cloud Computing e tecnologias relacionadas",
       "author": {
         "@id": "https://leonam.cloud/#person"
       },
       "publisher": {
         "@id": "https://leonam.cloud/#person"
       },
-      "inLanguage": "pt-BR"
+      "inLanguage": "pt-BR",
+      "about": [
+        {"@type": "Thing", "name": "Terraform"},
+        {"@type": "Thing", "name": "HashiCorp Consul"},
+        {"@type": "Thing", "name": "Infrastructure as Code"},
+        {"@type": "Thing", "name": "DevOps"}
+      ]
     }
   ]
 }
 </script>
+
+{% if page.layout == 'post' %}
+<!-- Article Schema for Blog Posts -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
+  "author": {
+    "@type": "Person",
+    "@id": "https://leonam.cloud/#person",
+    "name": "Leonam Vasquez"
+  },
+  "publisher": {
+    "@type": "Person",
+    "@id": "https://leonam.cloud/#person",
+    "name": "Leonam Vasquez"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  },
+  "url": "{{ page.url | absolute_url }}",
+  "inLanguage": "pt-BR",
+  "keywords": "{% for tag in page.tags %}{{ tag }}{% unless forloop.last %}, {% endunless %}{% endfor %}",
+  "articleSection": "{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}"
+  {% if page.image %},
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ page.image.path | default: page.image | absolute_url }}"
+  }
+  {% endif %}
+}
+</script>
+
+<!-- BreadcrumbList for navigation -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://leonam.cloud/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.categories | first }}",
+      "item": "https://leonam.cloud/categories/{{ page.categories | first | slugify }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | escape }}"
+    }
+  ]
+}
+</script>
+{% endif %}

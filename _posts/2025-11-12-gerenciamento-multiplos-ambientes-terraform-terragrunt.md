@@ -2,7 +2,7 @@
 title: "Gerenciamento de Múltiplos Ambientes (Dev, Stage, Prod) com Terraform e Terragrunt"
 date: 2025-11-12 18:43:52 +0000
 categories: [DevOps, IaC, Terraform]
-tags: [DevOps, IaC, Terraform, Terragrunt, Multi-Environment, Best Practices, DRY]
+tags: [DevOps, IaC, Terraform, Terragrunt, Multi-Environment, DRY, Remote State, Tutorial Terraform, HashiCorp, AWS]
 ---
 
 ## Introdução

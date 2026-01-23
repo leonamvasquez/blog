@@ -1,8 +1,9 @@
 ---
 title: "Desvendando o Terraform: O que é Infraestrutura como Código (IaC)?"
+description: "O que é Terraform e Infraestrutura como Código? Aprenda os conceitos fundamentais de IaC, a diferença entre modelos declarativo e imperativo, e como o Terraform materializa o estado desejado da sua infraestrutura."
 date: 2025-10-10 11:00:00 +0000
 categories: [DevOps, IaC, Terraform]
-tags: [DevOps, IaC, Terraform, Cloud]
+tags: [DevOps, IaC, Terraform, O que é Terraform, Infraestrutura como Código, HCL, HashiCorp, Cloud, Tutorial Terraform]
 ---
 
 ## Introdução
@@ -34,3 +35,13 @@ Esse processo não é só automação de tarefas, mas sim a aplicação de um co
 ## Conclusão
 
 Infraestrutura como Código muda completamente a maneira como ambientes computacionais são gerenciados, trazendo para a infraestrutura práticas já consagradas no desenvolvimento de software. O modelo declarativo, que o Terraform coloca em prática, permite que profissionais descrevam ambientes complexos de forma precisa, versionável e auditável. Entender essa abordagem é o primeiro passo para dominar o provisionamento de infraestrutura e construir ambientes escaláveis, confiáveis e reutilizáveis.
+
+---
+
+## Leia Também
+
+Se você gostou deste artigo, confira os outros posts da série sobre Terraform:
+
+- [Terraform State: O que é, por que é importante e como gerenciá-lo?](/posts/terraform-state-o-que-e-por-que-e-importante-e-como-gerencia-lo/)
+- [Terraform Além do Básico: count, for_each e Condicionais](/posts/terraform-alem-do-basico-count-foreach-condicionais/)
+- [Refatorando Código Terraform para Módulos Locais](/posts/refatorando-codigo-terraform-abstrair-monolitos-para-modulos-locais/)

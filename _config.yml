@@ -18,7 +18,10 @@ title: Leonam Vasquez # the main title
 
 tagline: DevOps Engineer # it will display as the subtitle
 
-description: Leonam Vasquez - DevOps, SRE, Plataform Engineering, Cloud Computing, Kubernetes e Infrastructure as Code. Blog técnico sobre tecnologia.
+description: >-
+  Blog técnico sobre Terraform, Consul e Tecnologias Cloud Native em português.
+  Tutoriais, guias práticos e artigos sobre Infraestrutura como Código (IaC),
+  DevOps, SRE, Platform Engineering, Kubernetes e Cloud Computing por Leonam Vasquez.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -46,7 +49,7 @@ webmaster_verifications:
   # Add the verification codes provided by the search console services.
   # Example for Google: the string inside the meta tag content (e.g. 'abc123def456')
   google: "" # e.g. "ABC123def456" (fill after registering site in Google Search Console)
-  bing: ""   # e.g. "1234abcd..." (Bing Webmaster Tools)
+  bing: "" # e.g. "1234abcd..." (Bing Webmaster Tools)
   alexa: ""
   yandex: ""
   baidu: ""
@@ -59,7 +62,7 @@ webmaster_verifications:
 analytics:
   google:
     # Google Analytics Measurement ID (G-XXXXXXXXXX). Leave empty to disable.
-    id: "" # e.g. "G-XXXXXXXXXX"
+    id: "G-CYXKMNCYMR"
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
@@ -125,11 +128,11 @@ comments:
   giscus:
     # To use Giscus (recommended), enable Discussions on a GitHub repo and fill these values.
     # Example values (replace with the real values from https://giscus.app):
-    repo: "leonamvasquez/blog"        # <gh-username>/<repo>
-    repo_id: ""                      # copy from giscus config
-    category: ""                     # copy from giscus config
-    category_id: ""                  # copy from giscus config
-    mapping: "pathname"              # e.g. 'pathname' or 'url'
+    repo: "leonamvasquez/blog" # <gh-username>/<repo>
+    repo_id: "" # copy from giscus config
+    category: "" # copy from giscus config
+    category_id: "" # copy from giscus config
+    mapping: "pathname" # e.g. 'pathname' or 'url'
     strict: "0"
     input_position: "bottom"
     lang: "pt"

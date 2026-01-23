@@ -1,8 +1,9 @@
 ---
 title: "Arquitetura de Configuração: Centralizando a 'Verdade' em Sistemas Distribuídos com Consul"
+description: "Como usar Consul Key-Value (KV) Store para configuração centralizada em microsserviços. Aprenda sobre Externalized Configuration, Feature Flags e configuração dinâmica em tempo real."
 date: 2025-11-28 09:00:00 -0300
 categories: [DevOps, Consul]
-tags: [DevOps, Consul, Configuration Management, Distributed Systems]
+tags: [DevOps, HashiCorp Consul, Consul KV, Configuration Management, Sistemas Distribuídos, Microsserviços, Feature Flags, Configuração Dinâmica]
 ---
 
 ## Introdução

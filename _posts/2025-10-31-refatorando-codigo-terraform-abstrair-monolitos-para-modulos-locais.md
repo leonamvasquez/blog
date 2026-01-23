@@ -1,8 +1,9 @@
 ---
 title: "Refatorando Código Terraform: Como e Porquê Abstrair monolitos para Módulos Locais"
+description: "Como criar módulos Terraform locais para organizar e reutilizar código. Aprenda a refatorar configurações monolíticas em módulos reutilizáveis com exemplos práticos e terraform state mv."
 date: 2025-10-31 08:00:00 +0000
 categories: [DevOps, IaC, Terraform]
-tags: [DevOps, IaC, Terraform, Terraform Modules, Refactoring, Best Practices]
+tags: [DevOps, IaC, Terraform, Terraform Modules, Módulos Terraform, Refatoração, Terraform State, Tutorial Terraform, HashiCorp, Best Practices]
 ---
 
 ## Introdução

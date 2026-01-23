@@ -1,8 +1,9 @@
 ---
 title: "Entendendo Containers: Linux, Docker e Kubernetes"
+description: "O que são containers e como funcionam? Aprenda as diferenças entre containers Linux, Docker e Kubernetes. Tutorial com exemplos práticos de namespaces, cgroups, Dockerfile e manifests K8s."
 date: 2025-09-24 18:00:00 -0300
 categories: [DevOps, Containers]
-tags: [Containers, Linux, Docker, Kubernetes, DevOps, Cloud-Native]
+tags: [Containers, Linux, Docker, Kubernetes, DevOps, Cloud-Native, Namespaces, cgroups]
 ---
 
 # O Que São Containers?

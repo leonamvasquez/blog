@@ -1,8 +1,9 @@
 ---
 title: "Modernizando o Legado: Automatizando Aplicações Estáticas (NGINX/HAProxy) com Consul-Template"
+description: "Como usar Consul-Template para automatizar NGINX e HAProxy com Service Discovery. Tutorial prático para modernizar aplicações legadas com configuração dinâmica e auto-reload."
 date: 2025-12-10 09:00:00 -0300
 categories: [DevOps, Automation, Consul]
-tags: [DevOps, Consul, NGINX, HAProxy, Automation, Legacy Modernization]
+tags: [DevOps, HashiCorp Consul, Consul Template, NGINX, HAProxy, Automação, Service Discovery, Legacy Modernization, Load Balancer]
 ---
 
 ## Introdução

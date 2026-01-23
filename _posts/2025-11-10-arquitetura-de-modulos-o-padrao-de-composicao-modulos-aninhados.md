@@ -1,8 +1,9 @@
 ---
 title: "Arquitetura de Módulos: O Padrão de Composição (Módulos Aninhados)"
+description: "Aprenda o padrão de composição de módulos aninhados no Terraform. Tutorial sobre como criar módulos de alto nível que orquestram módulos de baixo nível para infraestrutura escalável e reutilizável."
 date: 2025-11-06 20:00:00 +0000
 categories: [DevOps, IaC, Terraform]
-tags: [DevOps, IaC, Terraform, Terraform Modules, Refactoring, Best Practices]
+tags: [DevOps, IaC, Terraform, Terraform Modules, Módulos Aninhados, Arquitetura Terraform, Composição, Tutorial Terraform, HashiCorp, Best Practices]
 ---
 
 ## Introdução

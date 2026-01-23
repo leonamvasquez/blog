@@ -1,8 +1,9 @@
 ---
 title: "Desvendando o HashiCorp Consul: O Pilar de Conectividade Além do Terraform e Vault"
+description: "O que é HashiCorp Consul e como ele funciona? Aprenda Service Discovery, Health Checks e por que o Consul é essencial para microsserviços e arquiteturas de infraestrutura dinâmica na nuvem."
 date: 2025-11-25 23:41:51 -0300
 categories: [DevOps, Consul]
-tags: [DevOps, Consul, Networking, Service Discovery]
+tags: [DevOps, HashiCorp Consul, Consul, Service Discovery, Health Check, Microsserviços, DNS, Networking, O que é Consul]
 ---
 
 ## Introdução
@@ -65,4 +66,15 @@ O HashiCorp Consul preenche a lacuna de automação de rede que surge quando ado
 
 Entender o Consul é o próximo passo lógico para profissionais que já dominam o provisionamento com Terraform e buscam arquitetar sistemas distribuídos mais resilientes e autogerenciáveis.
 
-Nos próximos artigos, exploraremos como utilizar o Consul para gerenciamento de configuração distribuída e como ele habilita padrões avançados de segurança com Service Mesh.
+---
+
+## Leia Também
+
+Confira os outros posts da série sobre HashiCorp Consul:
+
+- [Centralizando Configuração em Sistemas Distribuídos com Consul KV](/posts/arquitetura-de-configuracao-centralizando-a-verdade-em-sistemas-distribuidos-com-consul/)
+- [Automatizando NGINX e HAProxy com Consul-Template](/posts/modernizando-o-legado-automatizando-aplicacoes-estaticas-com-consul-template/)
+
+Se você ainda não conhece Terraform, comece por aqui:
+
+- [O que é Terraform e Infraestrutura como Código?](/posts/desvendando-terraform-infraestrutura-como-codigo/)
