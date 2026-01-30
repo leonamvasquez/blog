@@ -36,7 +36,7 @@ A filosofia central do Consul é simples e poderosa: **a unidade fundamental da 
 
 Ao abstrair a complexidade da rede subjacente, o Consul fornece uma visão lógica e consistente de todo o ambiente distribuído.
 
-### 1. VMs como Cidadãs de Primeira Classe
+### 1. VMs como Recursos Nativos na Malha
 
 Diferente de abordagens que dependem exclusivamente de componentes específicos de Kubernetes, uma VM pode participar da malha do Consul simplesmente executando o **Consul Agent**.
 
