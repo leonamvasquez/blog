@@ -62,7 +62,7 @@ webmaster_verifications:
 analytics:
   google:
     # Google Analytics Measurement ID (G-XXXXXXXXXX). Leave empty to disable.
-    id: "G-CYXKMNCYMR"
+    id: "G-Q04D9LCZJH"
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
