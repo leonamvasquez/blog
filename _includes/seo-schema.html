@@ -5,13 +5,13 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://leonam.cloud/#person",
+      "@id": "https://leonam.io/#person",
       "name": "Leonam Ricardo Vasquez Ramos",
       "alternateName": "Leonam Vasquez",
       "description": "DevOps Engineer especialista em Terraform, HashiCorp Consul, Platform Engineering, SRE, Cloud Computing e Kubernetes",
       "jobTitle": "DevOps/Platform Engineer",
       "knowsAbout": ["Terraform", "HashiCorp Consul", "Consul Template", "Terraform State", "Terraform Modules", "Terragrunt", "Service Discovery", "DevOps", "Platform Engineering", "SRE", "AWS", "Azure", "GCP", "Kubernetes", "Docker", "Infrastructure as Code"],
-      "url": "https://leonam.cloud",
+      "url": "https://leonam.io",
       "sameAs": [
         "https://github.com/leonamvasquez",
         "https://linkedin.com/in/leonamvasquez"
@@ -20,31 +20,31 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://leonam.cloud/#website",
-      "url": "https://leonam.cloud",
+      "@id": "https://leonam.io/#website",
+      "url": "https://leonam.io",
       "name": "Leonam Vasquez - DevOps & Platform Engineer",
       "description": "Blog técnico sobre DevOps, Platform Engineering, SRE e Cloud Computing por Leonam Vasquez",
       "publisher": {
-        "@id": "https://leonam.cloud/#person"
+        "@id": "https://leonam.io/#person"
       },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://leonam.cloud/search?q={search_term_string}",
+        "target": "https://leonam.io/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       },
       "inLanguage": "pt-BR"
     },
     {
       "@type": "Blog",
-      "@id": "https://leonam.cloud/#blog",
-      "url": "https://leonam.cloud",
+      "@id": "https://leonam.io/#blog",
+      "url": "https://leonam.io",
       "name": "Blog Leonam Vasquez - Terraform e Consul",
       "description": "Artigos técnicos sobre Terraform, HashiCorp Consul, DevOps, Platform Engineering, SRE, Cloud Computing e tecnologias relacionadas",
       "author": {
-        "@id": "https://leonam.cloud/#person"
+        "@id": "https://leonam.io/#person"
       },
       "publisher": {
-        "@id": "https://leonam.cloud/#person"
+        "@id": "https://leonam.io/#person"
       },
       "inLanguage": "pt-BR",
       "about": [
@@ -68,12 +68,12 @@
   "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
   "author": {
     "@type": "Person",
-    "@id": "https://leonam.cloud/#person",
+    "@id": "https://leonam.io/#person",
     "name": "Leonam Vasquez"
   },
   "publisher": {
     "@type": "Person",
-    "@id": "https://leonam.cloud/#person",
+    "@id": "https://leonam.io/#person",
     "name": "Leonam Vasquez"
   },
   "datePublished": "{{ page.date | date_to_xmlschema }}",
@@ -105,13 +105,13 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://leonam.cloud/"
+      "item": "https://leonam.io/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "{{ page.categories | first }}",
-      "item": "https://leonam.cloud/categories/{{ page.categories | first | slugify }}/"
+      "item": "https://leonam.io/categories/{{ page.categories | first | slugify }}/"
     },
     {
       "@type": "ListItem",
