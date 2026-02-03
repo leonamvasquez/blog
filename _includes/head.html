@@ -4,68 +4,68 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta
-    name="viewport"
-    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
   {%- capture seo_tags -%}
-    {% seo title=false %}
+  {% seo title=false %}
   {%- endcapture -%}
 
   <!-- Setup Open Graph image -->
 
   {% if page.image %}
-    {% assign src = page.image.path | default: page.image %}
+  {% assign src = page.image.path | default: page.image %}
 
-    {% unless src contains '://' %}
-      {%- capture img_url -%}
-        {% include media-url.html src=src subpath=page.media_subpath absolute=true %}
-      {%- endcapture -%}
+  {% unless src contains '://' %}
+  {%- capture img_url -%}
+  {% include media-url.html src=src subpath=page.media_subpath absolute=true %}
+  {%- endcapture -%}
 
-      {%- capture old_url -%}{{ src | absolute_url }}{%- endcapture -%}
-      {%- capture new_url -%}{{ img_url }}{%- endcapture -%}
+  {%- capture old_url -%}{{ src | absolute_url }}{%- endcapture -%}
+  {%- capture new_url -%}{{ img_url }}{%- endcapture -%}
 
-      {% assign seo_tags = seo_tags | replace: old_url, new_url %}
-    {% endunless %}
+  {% assign seo_tags = seo_tags | replace: old_url, new_url %}
+  {% endunless %}
 
   {% elsif site.social_preview_image %}
-    {%- capture img_url -%}
-      {% include media-url.html src=site.social_preview_image absolute=true %}
-    {%- endcapture -%}
+  {%- capture img_url -%}
+  {% include media-url.html src=site.social_preview_image absolute=true %}
+  {%- endcapture -%}
 
-    {%- capture og_image -%}
-      <meta property="og:image" content="{{ img_url }}" />
-    {%- endcapture -%}
+  {%- capture og_image -%}
+  <meta property="og:image" content="{{ img_url }}" />
+  {%- endcapture -%}
 
-    {%- capture twitter_image -%}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta property="twitter:image" content="{{ img_url }}" />
-    {%- endcapture -%}
+  {%- capture twitter_image -%}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:image" content="{{ img_url }}" />
+  {%- endcapture -%}
 
-    {% assign old_meta_clip = '<meta name="twitter:card" content="summary" />' %}
-    {% assign new_meta_clip = og_image | append: twitter_image %}
-    {% assign seo_tags = seo_tags | replace: old_meta_clip, new_meta_clip %}
+  {% assign old_meta_clip = '
+  <meta name="twitter:card" content="summary" />' %}
+  {% assign new_meta_clip = og_image | append: twitter_image %}
+  {% assign seo_tags = seo_tags | replace: old_meta_clip, new_meta_clip %}
   {% endif %}
 
   {{ seo_tags }}
 
   <!-- Custom SEO Meta Tags for Leonam Vasquez -->
-  <meta name="keywords" content="Terraform, HashiCorp Consul, Tutorial Terraform, Guia Consul, O que é Terraform, O que é Consul, Terraform State, Service Discovery, DevOps, Platform Engineering, SRE, AWS, Azure, GCP, Kubernetes, Docker, Infrastructure as Code, IaC, Terragrunt, Terraform Modules, Consul Template, Leonam Vasquez">
+  <meta name="keywords"
+    content="Terraform, HashiCorp Consul, Tutorial Terraform, Guia Consul, O que é Terraform, O que é Consul, Terraform State, Service Discovery, DevOps, Platform Engineering, SRE, AWS, Azure, GCP, Kubernetes, Docker, Infrastructure as Code, IaC, Terragrunt, Terraform Modules, Consul Template, Leonam Vasquez">
   <meta name="author" content="Leonam Ricardo Vasquez Ramos">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
-  
+
   <!-- Additional Open Graph for better social sharing -->
   <meta property="og:locale" content="pt_BR">
   <meta property="article:author" content="Leonam Vasquez">
-  
+
   <!-- Schema.org structured data -->
   {% include seo-schema.html %}
 
   <title>
     {%- unless page.layout == 'home' -%}
-      {{ page.title | append: ' | ' }}
+    {{ page.title | append: ' | ' }}
     {%- endunless -%}
     {{ site.title }}
   </title>
@@ -74,16 +74,16 @@
 
   <!-- Resource Hints -->
   {% unless site.assets.self_host.enabled %}
-    {% for hint in site.data.origin.cors.resource_hints %}
-      {% for link in hint.links %}
-        <link rel="{{ link.rel }}" href="{{ hint.url }}" {{ link.opts | join: ' ' }}>
-      {% endfor %}
-    {% endfor %}
+  {% for hint in site.data.origin.cors.resource_hints %}
+  {% for link in hint.links %}
+  <link rel="{{ link.rel }}" href="{{ hint.url }}" {{ link.opts | join: ' ' }}>
+  {% endfor %}
+  {% endfor %}
   {% endunless %}
 
   <!-- Bootstrap -->
   {% unless jekyll.environment == 'production' %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
   {% endunless %}
 
   <!-- Theme style -->
@@ -93,14 +93,106 @@
        when full Bootstrap utilities might not be present). This keeps the mask and
        sidebar toggle working even if Bootstrap is not loaded.) -->
   <style>
-    .d-none { display: none !important; }
-    .d-block { display: block !important; }
-    .d-flex { display: flex !important; }
-    .position-fixed { position: fixed !important; }
-    .w-100 { width: 100% !important; }
-    .h-100 { height: 100% !important; }
-    .z-1 { z-index: 1 !important; }
-    .z-2 { z-index: 2 !important; }
+    .d-none {
+      display: none !important;
+    }
+
+    .d-block {
+      display: block !important;
+    }
+
+    .d-flex {
+      display: flex !important;
+    }
+
+    .position-fixed {
+      position: fixed !important;
+    }
+
+    .w-100 {
+      width: 100% !important;
+    }
+
+    .h-100 {
+      height: 100% !important;
+    }
+
+    .z-1 {
+      z-index: 1 !important;
+    }
+
+    .z-2 {
+      z-index: 2 !important;
+    }
+
+    /* Language Toggle Slider - Global Styles */
+    #search {
+      margin-left: auto;
+    }
+
+    #lang-toggle-slider {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #lang-toggle-slider .lang-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted-color, #888);
+      transition: color 0.3s ease;
+    }
+
+    #lang-toggle-slider .lang-label.active {
+      color: var(--heading-color, #fff);
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--card-bg, #2a2a3e);
+      border: 1px solid var(--btn-border-color, #3a3a5c);
+      transition: 0.3s;
+      border-radius: 26px;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .flag-circle {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: 0.3s;
+      border-radius: 50%;
+      background: var(--body-bg, #1a1a2e);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    input:checked+.slider .flag-circle {
+      transform: translateX(24px);
+    }
   </style>
 
   <!-- Web Font -->
@@ -112,16 +204,16 @@
   <!-- 3rd-party Dependencies -->
 
   {% if site.toc and page.toc %}
-    <link rel="stylesheet" href="{{ site.data.origin[type].toc.css | relative_url }}">
+  <link rel="stylesheet" href="{{ site.data.origin[type].toc.css | relative_url }}">
   {% endif %}
 
   {% if page.layout == 'post' or page.layout == 'page' or page.layout == 'home' %}
-    <link rel="stylesheet" href="{{ site.data.origin[type]['lazy-polyfill'].css | relative_url }}">
+  <link rel="stylesheet" href="{{ site.data.origin[type]['lazy-polyfill'].css | relative_url }}">
   {% endif %}
 
   {% if page.layout == 'page' or page.layout == 'post' %}
-    <!-- Image Popup -->
-    <link rel="stylesheet" href="{{ site.data.origin[type].glightbox.css | relative_url }}">
+  <!-- Image Popup -->
+  <link rel="stylesheet" href="{{ site.data.origin[type].glightbox.css | relative_url }}">
   {% endif %}
 
   <!-- Scripts -->
@@ -131,22 +223,20 @@
   {% include js-selector.html lang=lang %}
 
   {% if jekyll.environment == 'production' %}
-    <!-- PWA -->
-    {% if site.pwa.enabled %}
-      <script
-        defer
-        src="{{ '/app.min.js' | relative_url }}?baseurl={{ site.baseurl | default: '' }}&register={{ site.pwa.cache.enabled }}"
-      ></script>
-    {% endif %}
+  <!-- PWA -->
+  {% if site.pwa.enabled %}
+  <script defer
+    src="{{ '/app.min.js' | relative_url }}?baseurl={{ site.baseurl | default: '' }}&register={{ site.pwa.cache.enabled }}"></script>
+  {% endif %}
 
-    <!-- Web Analytics -->
-    {% for analytics in site.analytics %}
-      {% capture str %}{{ analytics }}{% endcapture %}
-      {% assign platform = str | split: '{' | first %}
-      {% if site.analytics[platform].id and site.analytics[platform].id != empty %}
-        {% include analytics/{{ platform }}.html %}
-      {% endif %}
-    {% endfor %}
+  <!-- Web Analytics -->
+  {% for analytics in site.analytics %}
+  {% capture str %}{{ analytics }}{% endcapture %}
+  {% assign platform = str | split: '{' | first %}
+  {% if site.analytics[platform].id and site.analytics[platform].id != empty %}
+  {% include analytics/{{ platform }}.html %}
+  {% endif %}
+  {% endfor %}
   {% endif %}
 
   {% include metadata-hook.html %}

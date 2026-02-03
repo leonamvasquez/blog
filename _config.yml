@@ -11,6 +11,13 @@ lang: pt-br
 # Change to your timezone › https://zones.arilyn.cc
 timezone: America/Sao_Paulo
 
+# -------------------------
+# Multilingual Support (Manual Structure)
+# -------------------------
+# Português: / (default)
+# English: /en/
+# Posts em inglês devem ter `lang: en` no frontmatter
+
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 

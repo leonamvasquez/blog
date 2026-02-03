@@ -9,78 +9,131 @@ layout: compress
 {% include lang.html %}
 
 {% if site.theme_mode %}
-  {% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
+{% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
 {% endif %}
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
-    {% include sidebar.html lang=lang %}
+<body>
+  {% include sidebar.html lang=lang %}
 
-    <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container d-flex flex-column px-xxl-5">
-        {% include topbar.html lang=lang %}
+  <div id="main-wrapper" class="d-flex justify-content-center">
+    <div class="container d-flex flex-column px-xxl-5">
+      {% include topbar.html lang=lang %}
 
-        <div class="row flex-grow-1">
-          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
-            {% if layout.refactor or layout.layout == 'default' %}
-              {% include refactor-content.html content=content lang=lang %}
-            {% else %}
-              {{ content }}
-            {% endif %}
-          </main>
+      <div class="row flex-grow-1">
+        <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+          {% if layout.refactor or layout.layout == 'default' %}
+          {% include refactor-content.html content=content lang=lang %}
+          {% else %}
+          {{ content }}
+          {% endif %}
+        </main>
 
-          <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
-            <div class="access">
-              {% include_cached update-list.html lang=lang %}
-              {% include_cached trending-tags.html lang=lang %}
-            </div>
-
-            {% for _include in layout.panel_includes %}
-              {% assign _include_path = _include | append: '.html' %}
-              {% include {{ _include_path }} lang=lang %}
-            {% endfor %}
-          </aside>
-        </div>
-
-        <div class="row">
-          <!-- tail -->
-          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
-            {% for _include in layout.tail_includes %}
-              {% assign _include_path = _include | append: '.html' %}
-              {% include {{ _include_path }} lang=lang %}
-            {% endfor %}
-
-            {% include_cached footer.html lang=lang %}
+        <!-- panel -->
+        <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <div class="access">
+            {% include_cached update-list.html lang=lang %}
+            {% include_cached trending-tags.html lang=lang %}
           </div>
-        </div>
 
-        {% include_cached search-results.html lang=lang %}
+          {% for _include in layout.panel_includes %}
+          {% assign _include_path = _include | append: '.html' %}
+          {% include {{ _include_path }} lang=lang %}
+          {% endfor %}
+        </aside>
       </div>
 
-      <aside aria-label="Scroll to Top">
-        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
-          <i class="fas fa-angle-up"></i>
-        </button>
-      </aside>
+      <div class="row">
+        <!-- tail -->
+        <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+          {% for _include in layout.tail_includes %}
+          {% assign _include_path = _include | append: '.html' %}
+          {% include {{ _include_path }} lang=lang %}
+          {% endfor %}
+
+          {% include_cached footer.html lang=lang %}
+        </div>
+      </div>
+
+      {% include_cached search-results.html lang=lang %}
     </div>
 
-    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+    <aside aria-label="Scroll to Top">
+      <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+        <i class="fas fa-angle-up"></i>
+      </button>
+    </aside>
+  </div>
 
-    {% if site.pwa.enabled %}
-      {% include_cached notification.html lang=lang %}
-    {% endif %}
+  <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
 
-    <!-- Embedded scripts -->
+  {% if site.pwa.enabled %}
+  {% include_cached notification.html lang=lang %}
+  {% endif %}
 
-    {% for _include in layout.script_includes %}
-      {% assign _include_path = _include | append: '.html' %}
-      {% include {{ _include_path }} %}
-    {% endfor %}
+  <!-- Embedded scripts -->
 
-    {% include_cached search-loader.html lang=lang %}
-  </body>
+  {% for _include in layout.script_includes %}
+  {% assign _include_path = _include | append: '.html' %}
+  {% include {{ _include_path }} %}
+  {% endfor %}
+
+  {% include_cached search-loader.html lang=lang %}
+
+  <!-- Language Toggle Global Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkbox = document.getElementById('lang-checkbox');
+      const flagIndicator = document.getElementById('flag-indicator');
+      const ptLabel = document.querySelector('.lang-pt');
+      const enLabel = document.querySelector('.lang-en');
+
+      if (!checkbox) return; // Exit if toggle not present
+
+      // Get initial language from localStorage or default to 'pt'
+      const currentLang = localStorage.getItem('blog-language') || 'pt';
+      const isEnglish = currentLang === 'en';
+
+      // Initialize toggle state
+      checkbox.checked = isEnglish;
+      if (flagIndicator) flagIndicator.textContent = isEnglish ? '🇺🇸' : '🇧🇷';
+      if (ptLabel) ptLabel.classList.toggle('active', !isEnglish);
+      if (enLabel) enLabel.classList.toggle('active', isEnglish);
+
+      // Add change handler
+      checkbox.addEventListener('change', function () {
+        const showEnglish = this.checked;
+        const targetLang = showEnglish ? 'en' : 'pt';
+
+        // Update UI
+        if (flagIndicator) flagIndicator.textContent = showEnglish ? '🇺🇸' : '🇧🇷';
+        if (ptLabel) ptLabel.classList.toggle('active', !showEnglish);
+        if (enLabel) enLabel.classList.toggle('active', showEnglish);
+
+        // Save preference
+        localStorage.setItem('blog-language', targetLang);
+
+        // Filter posts if on homepage
+        const posts = document.querySelectorAll('.post-item');
+        posts.forEach(post => {
+          const postLang = post.getAttribute('data-lang');
+          if (postLang === targetLang) {
+            post.classList.remove('post-hidden');
+          } else {
+            post.classList.add('post-hidden');
+          }
+        });
+      });
+
+      // Trigger initial filter on homepage
+      if (document.querySelectorAll('.post-item').length > 0) {
+        checkbox.dispatchEvent(new Event('change'));
+      }
+    });
+  </script>
+</body>
+
 </html>

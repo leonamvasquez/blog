@@ -4,30 +4,36 @@
 -->
 
 {% capture result_elem %}
-  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">
-    <header>
-      <h2><a href="{url}">{title}</a></h2>
-      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">
-        {categories}
-        {tags}
-      </div>
-    </header>
-    <p>{content}</p>
-  </article>
+<article class="px-1 px-sm-2 px-lg-4 px-xl-0 search-result-item" data-lang="{lang}">
+  <header>
+    <h2><a href="{url}">{title}</a></h2>
+    <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">
+      {categories}
+      {tags}
+    </div>
+  </header>
+  <p>{content}</p>
+</article>
 {% endcapture %}
 
 {% capture not_found %}<p class="mt-5">{{ site.data.locales[include.lang].search.no_results }}</p>{% endcapture %}
 
+<style>
+  .search-result-item.lang-hidden {
+    display: none !important;
+  }
+</style>
+
 <script>
   {% comment %} Note: dependent library will be loaded in `js-selector.html` {% endcomment %}
   document.addEventListener('DOMContentLoaded', () => {
-    SimpleJekyllSearch({
+    const searchInstance = SimpleJekyllSearch({
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('search-results'),
       json: '{{ '/assets/js/data/search.json' | relative_url }}',
       searchResultTemplate: '{{ result_elem | strip_newlines }}',
       noResultsText: '{{ not_found }}',
-      templateMiddleware: function(prop, value, template) {
+      templateMiddleware: function (prop, value, template) {
         if (prop === 'categories') {
           if (value === '') {
             return `${value}`;
@@ -45,5 +51,36 @@
         }
       }
     });
+
+    // Filter search results by language after each search
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
+    function filterSearchResultsByLanguage() {
+      const currentLang = localStorage.getItem('blog-language') || 'pt';
+      const results = resultsContainer.querySelectorAll('.search-result-item');
+
+      results.forEach(result => {
+        const resultLang = result.getAttribute('data-lang');
+        if (resultLang === currentLang) {
+          result.classList.remove('lang-hidden');
+        } else {
+          result.classList.add('lang-hidden');
+        }
+      });
+    }
+
+    // Use MutationObserver to detect when search results are added
+    const observer = new MutationObserver(function (mutations) {
+      filterSearchResultsByLanguage();
+    });
+
+    observer.observe(resultsContainer, { childList: true, subtree: true });
+
+    // Also filter on language toggle change
+    const langCheckbox = document.getElementById('lang-checkbox');
+    if (langCheckbox) {
+      langCheckbox.addEventListener('change', filterSearchResultsByLanguage);
+    }
   });
 </script>
