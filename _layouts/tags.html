@@ -54,7 +54,8 @@ A tag belongs to a language if at least one post with that language uses it.
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     function filterTags() {
-      var currentLang = localStorage.getItem('blog-language') || 'pt';
+      var langCheckbox = document.getElementById('lang-checkbox');
+      var currentLang = langCheckbox && langCheckbox.checked ? 'en' : 'pt';
       var tagItems = document.querySelectorAll('.tag-item');
       tagItems.forEach(function (item) {
         var langs = item.getAttribute('data-lang') || '';
@@ -66,8 +67,8 @@ A tag belongs to a language if at least one post with that language uses it.
       });
     }
 
-    // Initial filter
-    filterTags();
+    // Initial filter after a short delay to ensure lang-toggle.js has initialized
+    setTimeout(filterTags, 100);
 
     // Filter on language change
     var langCheckbox = document.getElementById('lang-checkbox');
