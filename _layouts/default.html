@@ -16,7 +16,7 @@ layout: compress
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
 {% include head.html %}
 
-<body>
+<body data-layout="{{ page.layout }}" data-lang="{{ page.lang | default: 'pt' }}">
   {% include sidebar.html lang=lang %}
 
   <div id="main-wrapper" class="d-flex justify-content-center">
@@ -116,11 +116,21 @@ layout: compress
         // Save preference
         localStorage.setItem('blog-language', targetLang);
 
-        // Filter posts if on homepage
+        // Check if we're on a post page
+        const isPostPage = document.body.getAttribute('data-layout') === 'post';
+        const postLang = document.body.getAttribute('data-lang');
+
+        // If on a post page and the post language doesn't match, redirect to homepage
+        if (isPostPage && postLang && postLang !== targetLang) {
+          window.location.href = '/';
+          return;
+        }
+
+        // Filter posts if on homepage or archive pages
         const posts = document.querySelectorAll('.post-item');
         posts.forEach(post => {
-          const postLang = post.getAttribute('data-lang');
-          if (postLang === targetLang) {
+          const lang = post.getAttribute('data-lang');
+          if (lang === targetLang) {
             post.classList.remove('post-hidden');
           } else {
             post.classList.add('post-hidden');
