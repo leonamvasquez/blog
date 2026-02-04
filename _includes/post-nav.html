@@ -1,34 +1,55 @@
 <!-- Navigation buttons at the bottom of the post. -->
 
+{% comment %}
+Find previous and next posts in the SAME language.
+Jekyll's page.previous/next don't respect language, so we calculate manually.
+{% endcomment %}
+
+{% assign current_lang = page.lang | default: 'pt' %}
+{% assign same_lang_posts = '' | split: '' %}
+
+{% for post in site.posts %}
+{% assign post_lang = post.lang | default: 'pt' %}
+{% if post_lang == current_lang %}
+{% assign same_lang_posts = same_lang_posts | push: post %}
+{% endif %}
+{% endfor %}
+
+{% assign prev_post = nil %}
+{% assign next_post = nil %}
+{% assign found_current = false %}
+
+{% for post in same_lang_posts %}
+{% if post.url == page.url %}
+{% assign found_current = true %}
+{% elsif found_current and next_post == nil %}
+{% assign next_post = post %}
+{% elsif found_current == false %}
+{% assign prev_post = post %}
+{% endif %}
+{% endfor %}
+
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   {% assign previous = site.data.locales[include.lang].post.button.previous %}
   {% assign next = site.data.locales[include.lang].post.button.next %}
 
-  {% if page.previous.url %}
-    <a
-      href="{{ site.baseurl }}{{ page.previous.url }}"
-      class="btn btn-outline-primary"
-      aria-label="{{ previous }}"
-    >
-      <p>{{ page.previous.title }}</p>
-    </a>
+  {% if prev_post %}
+  <a href="{{ site.baseurl }}{{ prev_post.url }}" class="btn btn-outline-primary" aria-label="{{ previous }}">
+    <p>{{ prev_post.title }}</p>
+  </a>
   {% else %}
-    <div class="btn btn-outline-primary disabled" aria-label="{{ previous }}">
-      <p>-</p>
-    </div>
+  <div class="btn btn-outline-primary disabled" aria-label="{{ previous }}">
+    <p>-</p>
+  </div>
   {% endif %}
 
-  {% if page.next.url %}
-    <a
-      href="{{ site.baseurl }}{{page.next.url}}"
-      class="btn btn-outline-primary"
-      aria-label="{{ next }}"
-    >
-      <p>{{ page.next.title }}</p>
-    </a>
+  {% if next_post %}
+  <a href="{{ site.baseurl }}{{ next_post.url }}" class="btn btn-outline-primary" aria-label="{{ next }}">
+    <p>{{ next_post.title }}</p>
+  </a>
   {% else %}
-    <div class="btn btn-outline-primary disabled" aria-label="{{ next }}">
-      <p>-</p>
-    </div>
+  <div class="btn btn-outline-primary disabled" aria-label="{{ next }}">
+    <p>-</p>
+  </div>
   {% endif %}
 </nav>

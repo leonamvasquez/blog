@@ -3,20 +3,76 @@ layout: page
 # All the Tags of posts.
 ---
 
+{% comment %}
+Build a map of tag -> languages it belongs to.
+A tag belongs to a language if at least one post with that language uses it.
+{% endcomment %}
+
+<style>
+  .tag-item.tag-hidden {
+    display: none !important;
+  }
+</style>
+
 <div id="tags" class="d-flex flex-wrap mx-xl-2">
   {% assign tags = '' | split: '' %}
   {% for t in site.tags %}
-    {% assign tags = tags | push: t[0] %}
+  {% assign tags = tags | push: t[0] %}
   {% endfor %}
 
   {% assign sorted_tags = tags | sort_natural %}
 
   {% for t in sorted_tags %}
-    <div>
-      <a class="tag" href="{{ t | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
-        {{ t -}}
-        <span class="text-muted">{{ site.tags[t].size }}</span>
-      </a>
-    </div>
+  {% comment %} Determine which languages use this tag {% endcomment %}
+  {% assign tag_posts = site.tags[t] %}
+  {% assign has_pt = false %}
+  {% assign has_en = false %}
+  {% for post in tag_posts %}
+  {% assign post_lang = post.lang | default: 'pt' %}
+  {% if post_lang == 'pt' %}
+  {% assign has_pt = true %}
+  {% elsif post_lang == 'en' %}
+  {% assign has_en = true %}
+  {% endif %}
+  {% endfor %}
+
+  {% comment %} Build data-lang attribute (can be "pt", "en", or "pt en" for both) {% endcomment %}
+  {% assign tag_langs = '' %}
+  {% if has_pt %}{% assign tag_langs = tag_langs | append: 'pt ' %}{% endif %}
+  {% if has_en %}{% assign tag_langs = tag_langs | append: 'en ' %}{% endif %}
+  {% assign tag_langs = tag_langs | strip %}
+
+  <div class="tag-item" data-lang="{{ tag_langs }}">
+    <a class="tag" href="{{ t | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
+      {{ t -}}
+      <span class="text-muted">{{ site.tags[t].size }}</span>
+    </a>
+  </div>
   {% endfor %}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function filterTags() {
+      var currentLang = localStorage.getItem('blog-language') || 'pt';
+      var tagItems = document.querySelectorAll('.tag-item');
+      tagItems.forEach(function (item) {
+        var langs = item.getAttribute('data-lang') || '';
+        if (langs.indexOf(currentLang) !== -1) {
+          item.classList.remove('tag-hidden');
+        } else {
+          item.classList.add('tag-hidden');
+        }
+      });
+    }
+
+    // Initial filter
+    filterTags();
+
+    // Filter on language change
+    var langCheckbox = document.getElementById('lang-checkbox');
+    if (langCheckbox) {
+      langCheckbox.addEventListener('change', filterTags);
+    }
+  });
+</script>

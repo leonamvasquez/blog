@@ -193,6 +193,17 @@
     input:checked+.slider .flag-circle {
       transform: translateX(24px);
     }
+
+    /* Mobile: Hide PT/EN labels to save space */
+    @media (max-width: 576px) {
+      #lang-toggle-slider .lang-label {
+        display: none;
+      }
+
+      #lang-toggle-slider {
+        gap: 4px;
+      }
+    }
   </style>
 
   <!-- Web Font -->
