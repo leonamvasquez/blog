@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/infrastructure-as-software-tdd-terraform/
 categories: [Terraform, Engineering, Quality Assurance]
 tags: [Terraform, TDD, IaC, Automation, DevOps, Testing]
+icons: [terraform]
 ---
 
 ## Introduction

@@ -4,6 +4,7 @@ description: "Aprenda a aplicar Test Driven Development (TDD) em módulos Terraf
 date: 2026-02-04 23:16:39 -0300
 categories: [Terraform, Engineering, Quality Assurance]
 tags: [Terraform, TDD, IaC, Automation, DevOps, Testing]
+icons: [terraform]
 ---
 
 ## Introdução

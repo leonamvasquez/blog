@@ -4,6 +4,7 @@ description: "O que é Terraform e Infraestrutura como Código? Aprenda os conce
 date: 2025-10-10 11:00:00 +0000
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, O que é Terraform, Infraestrutura como Código, HCL, HashiCorp, Cloud, Tutorial Terraform]
+icons: [terraform]
 ---
 
 ## Introdução

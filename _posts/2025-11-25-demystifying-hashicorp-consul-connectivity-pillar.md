@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/demystifying-hashicorp-consul-connectivity-pillar/
 categories: [DevOps, Consul]
 tags: [DevOps, HashiCorp Consul, Consul, Service Discovery, Health Check, Microservices, DNS, Networking, What is Consul]
+icons: [consul]
 ---
 
 ## Introduction

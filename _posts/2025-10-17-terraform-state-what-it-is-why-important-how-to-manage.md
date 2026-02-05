@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/terraform-state-what-it-is-why-important-how-to-manage/
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terraform State, Remote Backend, S3, State Locking, Terraform Tutorial, HashiCorp]
+icons: [terraform]
 ---
 
 ## Introduction

@@ -4,6 +4,7 @@ description: "O que são containers e como funcionam? Aprenda as diferenças ent
 date: 2025-09-24 18:00:00 -0300
 categories: [DevOps, Containers]
 tags: [Containers, Linux, Docker, Kubernetes, DevOps, Cloud-Native, Namespaces, cgroups]
+icons: [linux, docker, kubernetes]
 ---
 
 # O Que São Containers?

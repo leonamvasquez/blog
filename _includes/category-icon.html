@@ -1,0 +1,9 @@
+{% comment %}
+Renders the appropriate icon for a category.
+Usage: {% include category-icon.html category="Terraform" %}
+{% endcomment %}
+
+{% assign cat_key = include.category | downcase %}
+{% assign icon_data = site.data.category_icons[cat_key] | default: site.data.category_icons['default'] %}
+
+<i class="{{ icon_data.icon }}" style="color: {{ icon_data.color }};" title="{{ include.category }}"></i>

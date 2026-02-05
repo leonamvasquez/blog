@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/understanding-containers-linux-docker-kubernetes/
 categories: [DevOps, Containers]
 tags: [Containers, Linux, Docker, Kubernetes, DevOps, Cloud-Native, Namespaces, cgroups]
+icons: [linux, docker, kubernetes]
 ---
 
 # What Are Containers?

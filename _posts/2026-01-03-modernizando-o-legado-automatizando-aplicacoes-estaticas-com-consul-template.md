@@ -4,6 +4,7 @@ description: "Como usar Consul-Template para automatizar NGINX e HAProxy com Ser
 date: 2025-12-10 09:00:00 -0300
 categories: [DevOps, Automation, Consul]
 tags: [DevOps, HashiCorp Consul, Consul Template, NGINX, HAProxy, Automação, Service Discovery, Legacy Modernization, Load Balancer]
+icons: [consul]
 ---
 
 ## Introdução

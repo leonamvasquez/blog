@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/modernizing-legacy-automating-nginx-haproxy-consul-template/
 categories: [DevOps, Automation, Consul]
 tags: [DevOps, HashiCorp Consul, Consul Template, NGINX, HAProxy, Automation, Service Discovery, Legacy Modernization, Load Balancer]
+icons: [consul]
 ---
 
 ## Introduction

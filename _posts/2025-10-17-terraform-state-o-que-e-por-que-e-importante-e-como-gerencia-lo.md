@@ -4,6 +4,7 @@ description: "Guia completo sobre Terraform State em português. Aprenda o que �
 date: 2025-10-17 11:00:00 +0000
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terraform State, Remote Backend, S3, State Locking, Tutorial Terraform, HashiCorp]
+icons: [terraform]
 ---
 
 ## Introdução

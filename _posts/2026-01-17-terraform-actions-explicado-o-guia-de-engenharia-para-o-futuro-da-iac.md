@@ -4,6 +4,7 @@ description: "Aprenda sobre Terraform Actions, a nova feature do Terraform 1.14 
 date: 2026-01-17 00:32:27 -0300
 categories: [Terraform, Architecture, Engineering]
 tags: [Terraform, IaC, HashiCorp, Terraform Actions, Day-2 Operations, Ansible, Automação, Tutorial Terraform]
+icons: [terraform]
 ---
 
 ## Introdução

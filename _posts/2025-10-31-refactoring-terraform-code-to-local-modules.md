@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/refactoring-terraform-code-to-local-modules/
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terraform Modules, Refactoring, Terraform State, Terraform Tutorial, HashiCorp, Best Practices]
+icons: [terraform]
 ---
 
 ## Introduction

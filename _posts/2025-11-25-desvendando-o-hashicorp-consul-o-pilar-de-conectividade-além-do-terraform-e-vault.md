@@ -4,6 +4,7 @@ description: "O que é HashiCorp Consul e como ele funciona? Aprenda Service Dis
 date: 2025-11-25 23:41:51 -0300
 categories: [DevOps, Consul]
 tags: [DevOps, HashiCorp Consul, Consul, Service Discovery, Health Check, Microsserviços, DNS, Networking, O que é Consul]
+icons: [consul]
 ---
 
 ## Introdução

@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/terraform-beyond-basics-count-foreach-conditionals/
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terraform count, Terraform for_each, Terraform Conditionals, Terraform Tutorial, Best Practices, HCL]
+icons: [terraform]
 ---
 
 ## Introduction

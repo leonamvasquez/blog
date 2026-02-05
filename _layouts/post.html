@@ -125,6 +125,21 @@ script_includes:
   </div>
 
   <div class="post-tail-wrapper text-muted">
+    <!-- technology icons -->
+    {% if page.icons %}
+    <div class="post-meta mb-2">
+      <span class="tech-icons">
+        {% for icon_key in page.icons %}
+        {% assign icon_data = site.data.category_icons[icon_key] %}
+        {% if icon_data %}
+        <i class="{{ icon_data.icon }} fa-lg me-2" style="color: {{ icon_data.color }};"
+          title="{{ icon_key | capitalize }}"></i>
+        {% endif %}
+        {% endfor %}
+      </span>
+    </div>
+    {% endif %}
+
     <!-- categories -->
     {% if page.categories.size > 0 %}
     <div class="post-meta mb-3">

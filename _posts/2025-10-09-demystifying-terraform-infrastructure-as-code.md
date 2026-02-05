@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/demystifying-terraform-infrastructure-as-code/
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, What is Terraform, Infrastructure as Code, HCL, HashiCorp, Cloud, Terraform Tutorial]
+icons: [terraform]
 ---
 
 ## Introduction

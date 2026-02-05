@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/module-architecture-composition-pattern-nested-modules/
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terraform Modules, Nested Modules, Terraform Architecture, Composition, Terraform Tutorial, HashiCorp, Best Practices]
+icons: [terraform]
 ---
 
 ## Introduction

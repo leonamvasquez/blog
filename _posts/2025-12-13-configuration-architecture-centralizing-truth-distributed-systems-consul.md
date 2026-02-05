@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/configuration-architecture-centralizing-truth-distributed-systems-consul/
 categories: [DevOps, Consul]
 tags: [DevOps, HashiCorp Consul, Consul KV, Configuration Management, Distributed Systems, Microservices, Feature Flags, Dynamic Configuration]
+icons: [consul]
 ---
 
 ## Introduction

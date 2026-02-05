@@ -4,6 +4,7 @@ description: "Aprenda o padrão de composição de módulos aninhados no Terrafo
 date: 2025-11-06 20:00:00 +0000
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terraform Modules, Módulos Aninhados, Arquitetura Terraform, Composição, Tutorial Terraform, HashiCorp, Best Practices]
+icons: [terraform]
 ---
 
 ## Introdução

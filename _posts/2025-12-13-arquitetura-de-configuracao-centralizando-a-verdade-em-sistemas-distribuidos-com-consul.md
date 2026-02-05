@@ -4,6 +4,7 @@ description: "Como usar Consul Key-Value (KV) Store para configuração centrali
 date: 2025-11-28 09:00:00 -0300
 categories: [DevOps, Consul]
 tags: [DevOps, HashiCorp Consul, Consul KV, Configuration Management, Sistemas Distribuídos, Microsserviços, Feature Flags, Configuração Dinâmica]
+icons: [consul]
 ---
 
 ## Introdução

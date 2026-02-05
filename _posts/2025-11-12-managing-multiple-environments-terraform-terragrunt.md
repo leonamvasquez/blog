@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/managing-multiple-environments-terraform-terragrunt/
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terragrunt, Multi-Environment, DRY, Remote State, Terraform Tutorial, HashiCorp, AWS]
+icons: [terraform]
 ---
 
 ## Introduction

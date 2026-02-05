@@ -4,6 +4,7 @@ date: 2026-01-29 23:36:17 -0300
 description: "Aprenda como unificar a conectividade entre Kubernetes e máquinas virtuais (VMs) utilizando o HashiCorp Consul como Service Mesh híbrido e Service Discovery centralizado."
 categories: [Architecture, Consul, Kubernetes]
 tags: [Consul, Kubernetes, Hybrid Cloud, Service Mesh, Networking, Legacy Modernization]
+icons: [consul, kubernetes]
 ---
 ## Introdução
 

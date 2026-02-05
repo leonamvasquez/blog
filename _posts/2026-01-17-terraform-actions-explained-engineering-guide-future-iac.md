@@ -6,6 +6,7 @@ lang: en
 permalink: /en/posts/terraform-actions-explained-engineering-guide-future-iac/
 categories: [Terraform, Architecture, Engineering]
 tags: [Terraform, IaC, HashiCorp, Terraform Actions, Day-2 Operations, Ansible, Automation, Terraform Tutorial]
+icons: [terraform]
 ---
 
 ## Introduction

@@ -1,0 +1,43 @@
+# Category to DevIcon mapping
+# Uses DevIcons v2: https://devicon.dev/
+# Format: category_name (lowercase): devicon-class
+
+terraform:
+  icon: "devicon-terraform-plain"
+  color: "#7B42BC"
+
+consul:
+  icon: "devicon-consul-plain"
+  color: "#F24C53"
+
+kubernetes:
+  icon: "devicon-kubernetes-plain"
+  color: "#326CE5"
+
+docker:
+  icon: "devicon-docker-plain"
+  color: "#2496ED"
+
+aws:
+  icon: "devicon-amazonwebservices-plain-wordmark"
+  color: "#FF9900"
+
+azure:
+  icon: "devicon-azure-plain"
+  color: "#0078D4"
+
+gcp:
+  icon: "devicon-googlecloud-plain"
+  color: "#4285F4"
+
+linux:
+  icon: "devicon-linux-plain"
+  color: "#FCC624"
+
+go:
+  icon: "devicon-go-original-wordmark"
+  color: "#00ADD8"
+
+python:
+  icon: "devicon-python-plain"
+  color: "#3776AB"

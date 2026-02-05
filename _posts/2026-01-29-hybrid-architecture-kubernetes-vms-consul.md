@@ -6,6 +6,7 @@ permalink: /en/posts/hybrid-architecture-kubernetes-vms-consul/
 description: "Learn how to unify connectivity between Kubernetes and virtual machines (VMs) using HashiCorp Consul as a hybrid Service Mesh and centralized Service Discovery."
 categories: [Architecture, Consul, Kubernetes]
 tags: [Consul, Kubernetes, Hybrid Cloud, Service Mesh, Networking, Legacy Modernization]
+icons: [consul, kubernetes]
 ---
 
 ## Introduction
