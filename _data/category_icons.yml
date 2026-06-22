@@ -41,3 +41,7 @@ go:
 python:
   icon: "devicon-python-plain"
   color: "#3776AB"
+
+terragrunt:
+  icon: "image"
+  image: "/assets/img/icons/terragrunt-light.png"

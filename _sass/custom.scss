@@ -1,0 +1,12 @@
+/* Custom icon styles for image-based icons */
+.icon-img {
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+  flex-shrink: 0;
+}

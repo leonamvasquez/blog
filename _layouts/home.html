@@ -87,10 +87,18 @@ Get all posts and mark them with language attribute for JS filtering
 
               <!-- technology icons (after categories) -->
               {% if post.icons %}
-              <span class="tech-icons ms-2" style="display:inline-flex; gap:0.25rem;">{% for icon_key in post.icons %}{%
-                assign icon_data = site.data.category_icons[icon_key] %}{% if icon_data %}<i
-                  class="{{ icon_data.icon }}" style="color: {{ icon_data.color }}; margin-left:0 !important;"
-                  title="{{ icon_key | capitalize }}"></i>{% endif %}{% endfor %}</span>
+              <span class="tech-icons ms-2" style="display:inline-flex; gap:0.25rem; align-items:center;">
+                {% for icon_key in post.icons %}
+                {% assign icon_data = site.data.category_icons[icon_key] %}
+                {% if icon_data %}
+                  {% if icon_data.icon == "image" %}
+                    <span class="icon-img" style="background-image: url('{{ icon_data.image }}');" title="{{ icon_key | capitalize }}" role="img" aria-label="{{ icon_key | capitalize }}"></span>
+                  {% else %}
+                    <i class="{{ icon_data.icon }}" style="color: {{ icon_data.color }}; margin-left:0 !important;" title="{{ icon_key | capitalize }}"></i>
+                  {% endif %}
+                {% endif %}
+                {% endfor %}
+              </span>
               {% endif %}
             </div>
 
