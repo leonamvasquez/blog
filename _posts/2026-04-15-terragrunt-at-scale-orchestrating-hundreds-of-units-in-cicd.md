@@ -209,5 +209,3 @@ This is the maturity that distinguishes a team that merely uses Terragrunt from 
 ## Conclusion
 
 Terragrunt's scalability in CI/CD does not emerge from the `run --all` command in isolation, but from the discipline of restricting it. Delta filtering, structured telemetry, and continuous Drift detection form, together, the backbone of a pipeline that scales linearly, not exponentially, with infrastructure growth.
-
-Next step: this week, instrument your validation pipeline with `--filter-affected` and measure the average execution time per Pull Request before and after the change. The observed reduction is the quantitative justification for evolving the rest of the pipeline.

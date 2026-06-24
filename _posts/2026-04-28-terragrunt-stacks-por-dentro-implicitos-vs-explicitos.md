@@ -150,5 +150,3 @@ Essa é a transição de uma operação baseada em convenção de diretórios pa
 ## Conclusão
 
 O Terragrunt Stacks não são uma renomeação. O modelo implícito reflete a estrutura de arquivos; o modelo explícito a substitui por uma declaração versionada, parametrizável e componível. A primeira abordagem é adequada para repositórios pequenos e específicos; a segunda é o caminho para a escala, a reutilização e a governança.
-
-Próximo passo: identifique, no seu repositório, um padrão de unit que se repete em três ou mais ambientes. Extraia-o para um catálogo versionado, descreva-o em um `terragrunt.stack.hcl` e execute `terragrunt stack generate`. A comparação entre a contagem de arquivos antes e depois é a métrica que justifica a adoção do modelo explícito.

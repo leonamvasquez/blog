@@ -207,5 +207,3 @@ Essa é a maturidade que distingue uma equipe que apenas utiliza o Terragrunt de
 ## Conclusão
 
 A escalabilidade do Terragrunt em CI/CD não emerge do comando `run --all` isoladamente, mas da disciplina de restringi-lo. A filtragem do delta, a telemetria estruturada e a detecção contínua de Drift formam, em conjunto, a espinha dorsal de uma esteira que escala de forma linear, e não exponencial, com o crescimento da infraestrutura.
-
-Próximo passo: ainda esta semana, instrumente sua esteira de validação com `--filter-affected` e meça o tempo médio de execução por Pull Request antes e depois da alteração. A redução observada é a justificativa quantitativa para evoluir o restante do pipeline.

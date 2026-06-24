@@ -152,5 +152,3 @@ This is the transition from a file-convention-based operation to one based on ve
 ## Conclusion
 
 Terragrunt Stacks are not a renaming. The implicit model reflects the file structure; the explicit model replaces it with a versioned, parameterizable, and composable declaration. The first approach is suitable for small, idiosyncratic repositories; the second is the path to scale, reusability, and governance.
-
-Next step: identify in your repository a unit pattern that repeats across three or more environments. Extract it to a versioned catalog, describe it in a `terragrunt.stack.hcl`, and run `terragrunt stack generate`. The comparison of file counts before and after is the metric that justifies adopting the explicit model.
