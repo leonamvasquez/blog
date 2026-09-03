@@ -45,3 +45,7 @@ python:
 terragrunt:
   icon: "image"
   image: "/assets/img/icons/terragrunt-light.png"
+
+opentofu:
+  icon: "image"
+  image: "/assets/img/icons/opentofu-light.png"
