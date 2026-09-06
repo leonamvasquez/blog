@@ -1,62 +1,32 @@
 ---
-title: "Terragrunt como Gerenciador de Runtime: Controlando Versões de OpenTofu e Terraform"
-description: "Como usar o Terragrunt para controlar qual binário e qual versão executam sua infraestrutura: terraform_binary, restrições de versão, fixação no CI e migração gradual entre Terraform e OpenTofu."
+title: "Terragrunt como Gerenciador de Runtime: Controlando a Versão do Terraform"
+description: "Como usar o Terragrunt para controlar qual versão do Terraform executa sua infraestrutura: restrições de versão, geração do bloco required_version, fixação no CI e rollout gradual entre units."
 date: 2026-07-10 19:00:00 -0300
 categories: [DevOps, IaC, Terragrunt]
-tags: [Terragrunt, OpenTofu, Terraform, CI/CD, Versionamento, IaC]
-icons: [terragrunt, opentofu]
+tags: [Terragrunt, Terraform, CI/CD, Versionamento, IaC]
+icons: [terragrunt, terraform, opentofu]
 ---
 
 ## Introdução
 
-Em maio de 2024, vários times descobriram na segunda-feira que os pipelines tinham quebrado no fim de semana. A imagem base usada passou a chamar o OpenTofu em vez do Terraform, e as restrições de versão declaradas no código pararam de bater.
+Duas execuções da mesma configuração podem produzir planos diferentes sem que uma linha de código tenha mudado. Basta que a versão do Terraform usada para gerar cada plano seja diferente.
 
-Ninguém tinha mudado nada. A mudança veio de fora, por uma tag de imagem que apontava pra versão mais recente.
+O cenário se repete com frequência parecida em times que operam infraestrutura: uma configuração passa a usar um recurso de linguagem recém-lançado, é testada localmente com sucesso e segue para revisão. O merge dispara o pipeline, e o pipeline falha, porque o runner de CI está numa versão mais antiga do Terraform, que não reconhece a sintaxe usada.
 
-O episódio é bom lembrete de uma pergunta que costuma ficar sem dono: quem, exatamente, decide qual binário e qual versão rodam sua infraestrutura?
+A causa raiz é sempre a mesma: nada garantia que a máquina local e o runner de CI rodassem a mesma versão. Em repositórios que usam Terragrunt, essa garantia pode e deve estar declarada no próprio código.
 
-Em repositório que usa Terragrunt, essa resposta pode e deve estar no próprio código.
+## O Que o Runtime Precisa Garantir
 
-## Três Perguntas que o Runtime Precisa Responder
+Vale organizar o problema antes de resolver, porque ele tem duas perguntas distintas que costumam ser tratadas como uma só:
 
-Vale organizar o problema antes de resolver, porque ele tem camadas distintas que costumam ser tratadas como uma só:
+1. **Qual versão do Terraform é aceitável?** Uma faixa definida, e não o que estiver instalado em cada máquina.
+2. **Quem instala e fixa essa versão?** A máquina local e o runner de CI precisam concordar, sem depender de memória ou de um README desatualizado.
 
-1. **Qual binário roda?** Terraform ou OpenTofu.
-2. **Qual versão é aceitável?** Uma faixa definida, não o que estiver instalado.
-3. **Quem instala e fixa essa versão?** A máquina do engenheiro e o runner de CI precisam concordar.
+O Terragrunt oferece resposta declarativa para a primeira pergunta. A segunda depende da sua esteira de CI, mas ganha uma rede de proteção quando a primeira já está configurada.
 
-O Terragrunt dá resposta declarativa pras duas primeiras. A terceira depende da esteira, mas ganha rede de proteção quando as duas anteriores estão configuradas.
+## Restringindo a Versão do Terraform
 
-## Camada 1: Qual Binário Roda
-
-As versões atuais do Terragrunt já chamam `tofu` por padrão. Mesmo assim, declarar a escolha explícita é boa prática, porque tira a dependência do que o ambiente decidiu por você:
-
-```hcl
-# root.hcl
-terraform_binary = "tofu"
-```
-
-Quando a decisão precisa variar por pipeline, existe a variável de ambiente equivalente:
-
-```bash
-export TG_TF_PATH=$(which tofu)
-```
-
-E pra descobrir o que está de fato em uso, sem chutar:
-
-```bash
-terragrunt info print
-```
-
-O campo correspondente na saída mostra qual binário vai ser chamado. Esse comando resolve boa parte das dúvidas de ambiente em segundos.
-
-Repare no ganho conceitual: a escolha do motor de execução deixa de ser característica da máquina e passa a ser parte da configuração versionada.
-
-## Camada 2: Qual Versão é Aceitável
-
-Saber qual binário roda não basta. Um plano gerado por uma versão pode diferir do gerado por outra, e é aí que aparecem as divergências entre o que o engenheiro viu localmente e o que o pipeline aplicou.
-
-O Terragrunt permite declarar restrição pros dois lados:
+O Terragrunt permite declarar a faixa aceita diretamente na raiz da configuração:
 
 ```hcl
 # root.hcl
@@ -64,15 +34,21 @@ terragrunt_version_constraint = ">= 1.0.0, < 2.0.0"
 terraform_version_constraint  = ">= 1.11.0, < 2.0.0"
 ```
 
-Quando alguém executa fora da faixa, o comando falha antes de qualquer operação, com mensagem que aponta a versão instalada e a exigida. É falha barata, no começo, em vez de comportamento divergente descoberto depois.
+Quando alguém executa fora dessa faixa, o comando falha antes de qualquer operação, com uma mensagem que aponta a versão instalada e a exigida. É uma falha barata, no início, em vez de um comportamento divergente descoberto só depois de um `apply` malsucedido.
 
-Vale notar que o `terraform_version_constraint` existe há tempo e nasceu com outro propósito: permitir usar o Terragrunt com versão ainda não testada oficialmente, relaxando a verificação interna. O mesmo mecanismo serve pro oposto, que é apertar a faixa aceita.
+Para confirmar qual versão está efetivamente em uso, sem depender de suposição:
 
-## Camada 3: A Restrição que o Motor Enxerga
+```bash
+terragrunt info print
+```
 
-Existe ainda uma terceira checagem, feita pelo próprio Terraform ou OpenTofu via `required_version`. Como ela vive dentro do código da infraestrutura, costuma acabar duplicada em dezenas de módulos.
+O campo correspondente na saída mostra a versão do Terraform que será chamada. Esse comando resolve boa parte das dúvidas de ambiente em poucos segundos.
 
-O bloco de geração resolve isso a partir da raiz:
+## A Restrição que o Terraform Enxerga
+
+Existe ainda uma segunda verificação, feita pelo próprio Terraform através do bloco `required_version`. Como ele vive dentro do código da infraestrutura, costuma ficar duplicado em dezenas de módulos.
+
+O bloco de geração do Terragrunt resolve isso a partir da raiz:
 
 ```hcl
 # root.hcl
@@ -95,55 +71,42 @@ EOF
 }
 ```
 
-Com isso, a faixa aceita passa a ser definida num só lugar e propagada pra todas as units. Mudar a política de versões vira alteração de uma linha.
+Com isso, a faixa aceita passa a ser definida em um único lugar e propagada para todas as units. Alterar a política de versões vira uma alteração de uma linha, em vez de uma busca e substituição em dezenas de arquivos.
 
-## Camada 4: Instalação e Fixação no CI
+## Instalação e Fixação no CI
 
 As camadas anteriores validam. Esta instala.
 
-A action oficial deixa fixar as duas versões direto no workflow:
+A action oficial permite fixar a versão do Terraform diretamente no workflow:
 
 ```yaml
-- name: Instalar Terragrunt e OpenTofu
+- name: Instalar Terragrunt e Terraform
   uses: gruntwork-io/terragrunt-action@v3
   with:
-    tg_version:   "1.0.2"
-    tofu_version: "1.11.6"
+    tg_version: "1.0.2"
+    tf_version: "1.11.6"
 ```
 
-Se você quer escolher o binário de forma explícita, tem o parâmetro de caminho:
+Há também a possibilidade de declarar a ferramenta em um arquivo próprio de gerenciamento de versões, versionado junto ao repositório. Quando ele está presente, a action o utiliza como fonte da versão, o que faz a máquina local e o runner lerem exatamente a mesma declaração, sem duplicar o número em dois lugares diferentes.
 
-```yaml
-  with:
-    tf_path: "terraform"
-```
+Essa é a configuração que mais reduz o problema de divergência de ambiente, porque elimina a duplicação entre o que está no workflow e o que está na estação de trabalho.
 
-Existe também a opção de declarar as ferramentas num arquivo próprio de gerenciamento de versão, versionado junto com o repositório. Quando ele está presente, a action usa ele como fonte das versões, o que faz a máquina do engenheiro e o runner lerem exatamente a mesma declaração.
+## Rollout Gradual de Versão
 
-Essa é a configuração que mais reduz o problema de divergência de ambiente, porque tira a duplicação entre o que está no workflow e o que está na estação de trabalho.
+Há um uso menos óbvio dessas configurações, e ele é o mais valioso em repositórios grandes.
 
-## Migração Gradual entre Motores
+Como as restrições de versão podem ser sobrescritas em uma unit específica, independentemente do que a raiz define, é possível testar uma nova versão do Terraform em uma unit de baixo risco antes de propagar a mudança para o restante do repositório. Se algo quebrar, a reversão é a remoção de uma linha, e nenhuma outra unit foi afetada.
 
-Existe um uso menos óbvio dessas configurações, e é o mais valioso em repositório grande.
-
-Como a escolha do binário é configuração do Terragrunt, dá pra sobrescrever numa unit específica, independente do que a raiz define. Isso permite migrar de Terraform pra OpenTofu por partes, mantendo a maior parte do repositório no motor atual enquanto uma unit de baixo risco valida o novo.
-
-Se a validação falhar, a reversão é tirar uma linha, e nenhuma outra unit foi afetada.
-
-Esse é o ponto que costuma passar batido: manter a orquestração separada da execução não é preferência estética, é o que torna possível trocar o motor de forma incremental e reversível.
+Esse é o ponto que costuma passar despercebido: manter a orquestração separada da execução não é preferência estética, é o que torna possível testar uma atualização de versão de forma incremental e reversível, em vez de arriscar tudo de uma vez.
 
 ## Cuidados
 
-Dois pontos merecem atenção ao definir suas restrições.
-
-**A numeração dos dois projetos se afastou.** Terraform e OpenTofu compartilham a origem, mas seguem cadência própria de release. Uma faixa escrita pensando num não descreve necessariamente o mesmo conjunto de recursos no outro. Revise as restrições ao trocar de motor, em vez de assumir equivalência.
-
-**A tabela de compatibilidade tem limite conhecido.** A documentação do Terragrunt publica quais combinações são testadas oficialmente e reconhece que, na prática, a compatibilidade é mais ampla do que a tabela mostra. Use a tabela como referência de suporte, não como fronteira absoluta do que funciona.
+Um ponto merece atenção ao adotar essas restrições: elas validam a versão declarada, não o conteúdo do plano. Duas versões dentro da mesma faixa ainda podem se comportar de forma diferente diante de funcionalidades recém-lançadas ou de mudanças de comportamento documentadas no changelog. A restrição de versão reduz drasticamente a superfície de divergência, mas não substitui a leitura do changelog antes de mover o limite superior da faixa aceita.
 
 ## Conclusão
 
-Restrição de versão parece burocracia até o dia em que um plano diferente é aplicado por causa de um binário diferente. Depois disso, passa a parecer o mínimo.
+Restrições de versão parecem burocracia até o dia em que um plano diferente é aplicado por causa de uma versão diferente. Depois disso, elas passam a parecer o mínimo.
 
-O que essas configurações fazem, somadas, é transformar o runtime em parte da configuração versionada. Some a pergunta sobre o que está instalado na máquina de quem executou, porque a resposta está no repositório, sujeita a revisão como qualquer outra decisão de arquitetura.
+O que essas configurações fazem, somadas, é transformar o runtime em parte da configuração versionada. Deixa de existir a pergunta sobre o que está instalado na máquina de quem executou, porque a resposta está no repositório, sujeita a revisão como qualquer outra decisão de arquitetura.
 
-Essa mudança tem um efeito colateral que talvez seja o mais importante: torna a troca de motor uma operação técnica reversível, não um projeto. Quando o Terragrunt sabe declarar qual binário chamar e qual faixa aceitar, migrar entre Terraform e OpenTofu deixa de ser decisão de infraestrutura irreversível e vira linha de configuração que você testa numa unit e desfaz no dia seguinte.
+Essa mudança tem um efeito secundário que talvez seja o mais importante: torna a atualização de versão uma operação técnica reversível, e não um salto de fé. Quando o Terragrunt sabe declarar qual faixa aceitar e onde instalar a partir dela, subir de versão deixa de ser uma decisão de infraestrutura irreversível e vira uma linha de configuração que você pode testar em uma unit e desfazer no dia seguinte.
