@@ -56,7 +56,7 @@ webmaster_verifications:
   # Add the verification codes provided by the search console services.
   # Example for Google: the string inside the meta tag content (e.g. 'abc123def456')
   google: "" # e.g. "ABC123def456" (fill after registering site in Google Search Console)
-  bing: "" # e.g. "1234abcd..." (Bing Webmaster Tools)
+  bing: "F25A3CD1EA1A2E1EBD75B21BCA937B28" # Bing Webmaster Tools (meta msvalidate.01)
   alexa: ""
   yandex: ""
   baidu: ""
