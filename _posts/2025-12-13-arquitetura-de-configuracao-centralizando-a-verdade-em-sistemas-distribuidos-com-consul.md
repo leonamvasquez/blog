@@ -37,7 +37,7 @@ Neste modelo, a configuração não reside dentro do pacote da aplicação ou no
 
 O Consul possui um **Key-Value Store** (Armazenamento Chave-Valor) distribuído embutido. Diferente de um banco de dados relacional comum, o Consul KV é otimizado para leituras rápidas e consistência forte.
 
-![Arquitetura Consul KV](/assets/img/posts/consul/consul-kv-image.png)
+![Arquitetura Consul KV](/assets/img/posts/consul/consul-kv-image.webp)
 
 Ele permite organizar configurações de forma hierárquica, semelhante a um sistema de arquivos, criando uma taxonomia lógica para a infraestrutura:
 
