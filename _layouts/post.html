@@ -120,9 +120,42 @@ script_includes:
   </dialog>
   {% endif %}
 
+  {%- assign post_is_en = false -%}
+  {%- if page.lang == 'en' -%}{%- assign post_is_en = true -%}{%- endif -%}
+  {%- assign post_summary = page.summary | default: page.description -%}
+
+  {%- if post_summary %}
+  <!-- Resumo no topo: trecho curto e autocontido, fácil de extrair por buscadores e assistentes de IA -->
+  <aside class="post-summary" aria-label="{% if post_is_en %}Summary{% else %}Resumo{% endif %}"
+    style="border-left:4px solid var(--link-color, #2a6df4); background:var(--card-bg, rgba(127,127,127,.08)); padding:.75rem 1rem; margin:1.25rem 0; border-radius:.25rem;">
+    <strong>{% if post_is_en %}Summary{% else %}Resumo{% endif %}</strong>
+    <p style="margin:.35rem 0 0;">{{ post_summary | strip_html | strip_newlines }}</p>
+  </aside>
+  {%- endif %}
+
   <div class="content">
     {{ content }}
   </div>
+
+  <!-- Caixa de autor: liga o conteúdo a uma entidade identificável (página Sobre e perfis) -->
+  <aside class="post-author-box" itemscope itemtype="https://schema.org/Person"
+    style="margin:2.5rem 0 1.5rem; padding:1rem; border:1px solid var(--main-border-color, rgba(127,127,127,.3)); border-radius:.5rem;">
+    <p style="margin:0 0 .35rem;">
+      <strong>{% if post_is_en %}About the author{% else %}Sobre o autor{% endif %}:</strong>
+      <a href="{{ '/about/' | relative_url }}" rel="author" itemprop="url"><span itemprop="name">Leonam Vasquez</span></a>
+    </p>
+    <p style="margin:0;" itemprop="description">
+      {%- if post_is_en -%}
+      DevOps Engineer focused on Platform Engineering and infrastructure automation. Writes about Terraform, OpenTofu, Terragrunt, HashiCorp Vault and Consul.
+      {%- else -%}
+      DevOps Engineer com foco em Platform Engineering e automação de infraestrutura. Escreve sobre Terraform, OpenTofu, Terragrunt, HashiCorp Vault e Consul.
+      {%- endif -%}
+    </p>
+    <p style="margin:.5rem 0 0;">
+      <a href="https://github.com/leonamvasquez" rel="me noopener" itemprop="sameAs">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/leonamvasquez" rel="me noopener" itemprop="sameAs">LinkedIn</a>
+    </p>
+  </aside>
 
   <div class="post-tail-wrapper text-muted">
     <!-- technology icons -->

@@ -22,6 +22,8 @@ Acredito que conhecimento guardado é conhecimento perdido. Minha missão é pop
 
 Criei este blog para documentar minhas experiências, compartilhar soluções para problemas reais do dia a dia e contribuir para a comunidade de tecnologia.
 
+**O que escrevo aqui:** [Terragrunt](/tags/terragrunt/), [OpenTofu](/tags/opentofu/), [Terraform](/tags/terraform/), [HashiCorp Vault](/tags/vault/) e [Consul](/tags/consul/), com foco em Platform Engineering e segurança de credenciais. Cada artigo existe em português e em inglês.
+
 ---
 
 Espero de coração que você possa tirar alguma informação útil daqui!
@@ -45,6 +47,8 @@ I work building scalable and resilient platforms, always seeking to integrate th
 I believe that unshared knowledge is lost knowledge. My mission is to popularize Cloud Native technologies and demystify complex tools through practical and accessible content.
 
 I created this blog to document my experiences, share solutions to real day-to-day problems, and contribute to the tech community.
+
+**What I write about here:** [Terragrunt](/tags/terragrunt/), [OpenTofu](/tags/opentofu/), [Terraform](/tags/terraform/), [HashiCorp Vault](/tags/vault/) and [Consul](/tags/consul/), with a focus on Platform Engineering and credential security. Every article exists in both Portuguese and English.
 
 ---
 

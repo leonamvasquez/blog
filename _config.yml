@@ -26,9 +26,9 @@ title: Leonam Vasquez # the main title
 tagline: DevOps Engineer # it will display as the subtitle
 
 description: >-
-  Blog técnico sobre HashiCorp Terraform, Consul Service Mesh e Cloud Native.
-  Tutoriais práticos de IaC (Infrastructure as Code), DevOps, SRE, Platform Engineering,
-  Kubernetes, AWS, Azure e automação de infraestrutura. Por Leonam Vasquez.
+  Blog técnico bilíngue (português e inglês) de Leonam Vasquez sobre Terraform, OpenTofu,
+  Terragrunt, HashiCorp Vault e Consul. Tutoriais práticos de IaC (Infrastructure as Code),
+  Platform Engineering, DevOps, Kubernetes e segurança de credenciais.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -43,7 +43,7 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Leonam Ricardo Vasquez Ramos
+  name: Leonam Vasquez
   email: leonamvasquezr@gmail.com # altere para seu email
   links:
     # The first element serves as the copyright owner's link

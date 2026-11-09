@@ -20,6 +20,25 @@ Allow: /tags/
 # Crawl delay
 Crawl-delay: 1
 
+# Crawlers de busca generativa e assistentes de IA: acesso liberado de forma explícita.
+# (Um grupo específico substitui o grupo "*", então as regras de bloqueio são repetidas.)
+User-agent: OAI-SearchBot
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: bingbot
+User-agent: Googlebot
+Allow: /
+Disallow: /norobots/
+Disallow: /_drafts/
+Disallow: /admin/
+
 # Sitemaps
 Sitemap: {{ '/sitemap.xml' | absolute_url }}
 Sitemap: {{ '/feed.xml' | absolute_url }}

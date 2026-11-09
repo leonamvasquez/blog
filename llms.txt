@@ -1,0 +1,30 @@
+---
+layout: null
+sitemap: false
+permalink: /llms.txt
+---
+# Leonam Vasquez
+
+> Blog técnico bilíngue (português do Brasil e inglês) de Leonam Vasquez, DevOps Engineer com foco em Platform Engineering e automação de infraestrutura. Tutoriais práticos sobre Terraform, OpenTofu, Terragrunt, HashiCorp Vault e Consul, Kubernetes e segurança de credenciais. Cada artigo existe em português e em inglês.
+
+Autor: Leonam Ricardo Vasquez Ramos (Leonam Vasquez). Site: {{ site.url }}. Perfis: [GitHub](https://github.com/leonamvasquez), [LinkedIn](https://www.linkedin.com/in/leonamvasquez).
+
+## Temas
+- [Terragrunt]({{ '/tags/terragrunt/' | absolute_url }}): stacks, hooks, feature flags, catalog e scaffold, autenticação por unit, execução em escala no CI/CD.
+- [OpenTofu]({{ '/tags/opentofu/' | absolute_url }}): arquitetura, migração a partir do Terraform, valores efêmeros, criptografia de state, módulos como artefatos OCI.
+- [HashiCorp Vault]({{ '/tags/vault/' | absolute_url }}): arquitetura, Shamir e auto-unseal, métodos de autenticação, credenciais dinâmicas de AWS e de banco de dados.
+- [Terraform]({{ '/tags/terraform/' | absolute_url }}): state, módulos, count e for_each, múltiplos ambientes.
+- [HashiCorp Consul]({{ '/tags/consul/' | absolute_url }}): service discovery, configuração centralizada e Consul Template.
+
+## Sobre
+- [Sobre o autor]({{ '/about/' | absolute_url }}): apresentação, áreas de atuação e contatos.
+
+## Artigos em português
+{% for post in site.posts %}{% unless post.lang == 'en' %}- [{{ post.title | strip_newlines }}]({{ post.url | absolute_url }}){% if post.description %}: {{ post.description | strip_newlines | truncate: 220 }}{% endif %}
+{% endunless %}{% endfor %}
+## Articles in English
+{% for post in site.posts %}{% if post.lang == 'en' %}- [{{ post.title | strip_newlines }}]({{ post.url | absolute_url }}){% if post.description %}: {{ post.description | strip_newlines | truncate: 220 }}{% endif %}
+{% endif %}{% endfor %}
+## Optional
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }}): lista completa de URLs do site.
+- [Feed RSS]({{ '/feed.xml' | absolute_url }}): artigos mais recentes.
