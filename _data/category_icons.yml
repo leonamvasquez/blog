@@ -10,6 +10,10 @@ consul:
   icon: "devicon-consul-plain"
   color: "#F24C53"
 
+vault:
+  icon: "devicon-vault-plain"
+  color: "#FFD814"
+
 kubernetes:
   icon: "devicon-kubernetes-plain"
   color: "#326CE5"

@@ -1,6 +1,6 @@
 ---
-title: "Terragrunt em Escala: Orquestrando Centenas de Units no CI/CD com run --all e Detecção de Drift"
-description: "Aprenda a orquestrar centenas de units do Terragrunt em uma esteira de CI/CD escalável, executando apenas o delta afetado com --filter-affected, gerando relatórios estruturados de execução e implementando detecção contínua de Configuration Drift via GitOps."
+title: "Terragrunt no CI/CD em Escala: run --all e Detecção de Drift"
+description: "Orquestre centenas de units do Terragrunt no CI/CD: execute só o que mudou com --filter-affected, relatórios estruturados e detecção contínua de drift."
 date: 2026-04-15 19:00:00 -0300
 categories: [Terraform, Platform Engineering, SRE]
 tags: [Terragrunt, CI/CD, Drift Detection, GitOps, IaC, Platform Engineering]

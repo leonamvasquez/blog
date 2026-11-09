@@ -1,6 +1,6 @@
 ---
-title: "Managing Multiple Environments (Dev, Stage, Prod) with Terraform and Terragrunt"
-description: "Learn how to manage multiple environments with Terraform and Terragrunt. Complete tutorial on DRY patterns, remote state management and multi-environment infrastructure."
+title: "Terraform Multiple Environments with Terragrunt: Dev, Stage, Prod"
+description: "Manage dev, stage and prod with Terraform and Terragrunt: DRY patterns, per-environment remote state and a folder layout that avoids duplication."
 date: 2025-11-12 18:43:52 +0000
 lang: en
 permalink: /en/posts/managing-multiple-environments-terraform-terragrunt/

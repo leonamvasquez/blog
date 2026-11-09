@@ -1,6 +1,6 @@
 ---
-title: "Valores Efêmeros: Como o OpenTofu Trata Segredos que Não Vão para o State"
-description: "Entenda os valores efêmeros do OpenTofu: a diferença entre sensitive e ephemeral, variáveis e saídas efêmeras, recursos efêmeros e atributos write-only, com os contextos onde cada um pode ser usado."
+title: "Valores Efêmeros no OpenTofu: Segredos Fora do State"
+description: "Valores efêmeros do OpenTofu explicados: variáveis, saídas e recursos efêmeros, atributos write-only e como eles mantêm segredos fora do state."
 date: 2026-06-26 19:00:00 -0300
 categories: [DevOps, IaC, OpenTofu]
 tags: [OpenTofu, State, Segurança, DevSecOps, Segredos, IaC]

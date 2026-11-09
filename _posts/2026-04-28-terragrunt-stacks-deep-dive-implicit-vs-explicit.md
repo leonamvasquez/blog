@@ -1,6 +1,6 @@
 ---
-title: "Terragrunt Stacks Deep Dive: Implicit vs. Explicit (and When to Use Each)"
-description: "A technical deep dive into Terragrunt Stacks architecture: the distinction between implicit and explicit stacks, the anatomy of terragrunt.stack.hcl, value injection, composition via nested stacks, and the on-demand generation model."
+title: "Terragrunt Stacks Explained: Implicit vs. Explicit"
+description: "Terragrunt stacks explained: implicit vs. explicit stacks, the anatomy of terragrunt.stack.hcl, nested stacks and on-demand generation, with examples."
 date: 2026-04-28 19:00:00 +0000
 lang: en
 permalink: /en/posts/terragrunt-stacks-deep-dive-implicit-vs-explicit/

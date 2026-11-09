@@ -1,6 +1,6 @@
 ---
-title: "Terragrunt Stacks por Dentro: Implícitos vs. Explícitos (e Quando Usar Cada Um)"
-description: "Um mergulho técnico na arquitetura dos Terragrunt Stacks: a distinção entre stacks implícitos e explícitos, a anatomia do terragrunt.stack.hcl, a injeção de valores, a composição via stacks aninhados e o modelo de geração sob demanda."
+title: "Terragrunt Stacks Explicado: Implícitos vs. Explícitos"
+description: "Terragrunt stacks explicados: stacks implícitos vs. explícitos, a anatomia do terragrunt.stack.hcl, stacks aninhados e geração sob demanda, com exemplos."
 date: 2026-04-28 19:00:00 -0300
 categories: [Terraform, Platform Engineering, IaC]
 tags: [Terragrunt, Terragrunt Stacks, IaC, DRY, Platform Engineering]

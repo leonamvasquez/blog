@@ -1,6 +1,6 @@
 ---
-title: "Ephemeral Values: How OpenTofu Handles Secrets That Never Hit State"
-description: "Understand OpenTofu's ephemeral values: the difference between sensitive and ephemeral, ephemeral variables and outputs, ephemeral resources and write-only attributes, and the contexts where each can be used."
+title: "OpenTofu Ephemeral Values: Keep Secrets Out of State"
+description: "OpenTofu ephemeral values explained: ephemeral variables, outputs and resources, write-only attributes, and how they keep secrets out of state."
 date: 2026-06-26 19:00:00 +0000
 lang: en
 permalink: /en/posts/ephemeral-values-how-opentofu-handles-secrets-that-never-hit-state/

@@ -1,6 +1,6 @@
 ---
-title: "Terraform Beyond the Basics: Using count, for_each and Conditional Expressions"
-description: "Learn how to use count, for_each and conditional expressions in Terraform. Practical tutorial with code examples to create dynamic and scalable configurations following IaC best practices."
+title: "Terraform count vs for_each: When to Use Each"
+description: "When to use count, for_each and conditional expressions in Terraform, with practical examples, pitfalls and best practices for dynamic configurations."
 date: 2025-10-23 08:00:00 +0000
 lang: en
 permalink: /en/posts/terraform-beyond-basics-count-foreach-conditionals/

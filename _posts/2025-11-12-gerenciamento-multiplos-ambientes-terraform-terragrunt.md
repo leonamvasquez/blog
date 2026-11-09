@@ -1,5 +1,6 @@
 ---
-title: "Gerenciamento de Múltiplos Ambientes (Dev, Stage, Prod) com Terraform e Terragrunt"
+title: "Múltiplos Ambientes (Dev, Stage, Prod) com Terraform e Terragrunt"
+description: "Como gerenciar dev, stage e prod com Terraform e Terragrunt: padrão DRY, state remoto por ambiente e estrutura de pastas sem duplicação."
 date: 2025-11-12 18:43:52 +0000
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terragrunt, Multi-Environment, DRY, Remote State, Tutorial Terraform, HashiCorp, AWS]

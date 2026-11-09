@@ -1,6 +1,6 @@
 ---
-title: "Terraform Além do Básico: Utilizando count, for_each e Expressões Condicionais"
-description: "Aprenda a usar count, for_each e expressões condicionais no Terraform. Tutorial prático com exemplos de código para criar configurações dinâmicas e escaláveis seguindo as melhores práticas de IaC."
+title: "Terraform count vs for_each: Quando Usar Cada Um"
+description: "Quando usar count, for_each e expressões condicionais no Terraform, com exemplos práticos, armadilhas comuns e boas práticas para configurações dinâmicas."
 date: 2025-10-23 08:00:00 +0000
 categories: [DevOps, IaC, Terraform]
 tags: [DevOps, IaC, Terraform, Terraform count, Terraform for_each, Terraform Conditionals, Tutorial Terraform, Best Practices, HCL]

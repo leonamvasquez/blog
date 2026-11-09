@@ -1,6 +1,6 @@
 ---
-title: "Terragrunt at Scale: Orchestrating Hundreds of Units in CI/CD with run --all and Drift Detection"
-description: "Learn how to orchestrate hundreds of Terragrunt units in a scalable CI/CD pipeline, executing only the affected delta with --filter-affected, generating structured execution reports, and implementing continuous Configuration Drift detection via GitOps."
+title: "Terragrunt in CI/CD at Scale: run --all and Drift Detection"
+description: "Orchestrate hundreds of Terragrunt units in CI/CD: run only affected units with --filter-affected, structured reports and continuous drift detection."
 date: 2026-04-15 19:00:00 +0000
 lang: en
 permalink: /en/posts/terragrunt-at-scale-orchestrating-hundreds-of-units-in-cicd/
